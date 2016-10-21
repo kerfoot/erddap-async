@@ -1,0 +1,93 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import json
+import argparse
+from UFrame import UFrame
+from asynclib.erddap import fetch_erddap_datasets
+from asynclib.backend import get_updated_datasets
+
+def main(args):
+    '''Write the list of actively deployment instruments from the default UFrame
+    instance.  The default UFrame instance is taken from the UFRAME_BASE_URL
+    environment.  Active deployments are taken from the UFrame asset management 
+    API.  If no destination is specified, the resulting JSON catalog is written
+    to OOI_ERDDAP_DATA_HOME/catalogs provided OOI_ERDDAP_DATA_HOME is defined in
+    then user environment.  If not specified, the catalog is written to the current
+    working directory.  One file, containing all of the active deployments, is written
+    and individual files for each subsite are also written.'''
+    
+    dest_dir = args.destination
+    if not dest_dir:
+        dest_dir = os.path.realpath(os.curdir)
+
+    if not os.path.isdir(dest_dir):
+            sys.stderr.write('Catalog destination does not exist: {:s}\n'.format(dest_dir))
+            return 1
+            
+    # Create the UFrame instance
+    uframe = UFrame(base_url=args.base_url, timeout=args.timeout)
+    # Hit the ERDDAP instance to get the list of current datasets
+    if not args.erddap_url:
+        erddap_backend_url = os.getenv('OOI_ERDDAP_BACKEND_URL')
+    else:
+        erddap_backend_url = args.erddap_url
+    
+    if not erddap_backend_url or not erddap_backend_url.startswith('http'):
+        sys.stderr.write('No ERDDAP instance specified\n')
+        return 1
+        
+    erddap_catalog_datasets = fetch_erddap_datasets(erddap_backend_url)
+    if not erddap_catalog_datasets:
+        sys.stderr.write('No backend ERDDAP datasets found: {:s}\n'.format(erddap_backend_url))
+        return 1
+    
+    for json_file in args.deployment_json_files:
+        
+        with open(json_file, 'r') as fid:
+            deployments = json.load(fid)
+            
+        updated_datasets = get_updated_datasets(uframe, deployments, erddap_catalog_datasets)
+        
+        if not updated_datasets:
+            continue
+         
+        catalog_file = os.path.basename(json_file)   
+        (fname, ext) = os.path.splitext(catalog_file)
+        # Write the resulting datasets that need updating to file
+        updated_catalog = os.path.join(dest_dir, '{:s}.updates.json'.format(fname))
+        with open(updated_catalog, 'w') as fid:
+            json.dump(updated_datasets, fid)
+    
+    return 0
+    
+if __name__ == '__main__':
+
+    arg_parser = argparse.ArgumentParser(description=main.__doc__)
+    arg_parser.add_argument('deployment_json_files',
+        nargs='*',
+        help='One or more catalog deployment JSON catalog files')
+    arg_parser.add_argument('-d', '--destination',
+        dest='destination',
+        help='Specify the location for the catalog file, which must exist')
+    arg_parser.add_argument('-c', '--clobber',
+        dest='clobber',
+        action='store_true',
+        help='Clobber if the catalog file already exists')
+    arg_parser.add_argument('-e', '--erddap_backend_url',
+        dest='erddap_url',
+        help='ERDDAP address.  Must start with \'http://\'.')
+    arg_parser.add_argument('-b', '--baseurl',
+        dest='base_url',
+        help='Specify an alternate uFrame server URL. Must start with \'http://\'.  Value is taken from the UFRAME_BASE_URL environment variable, if set')
+    arg_parser.add_argument('-t', '--timeout',
+        type=int,
+        default=120,
+        help='Specify the timeout, in seconds (Default is 120 seconds).')
+
+    parsed_args = arg_parser.parse_args()
+    #print parsed_args
+    #sys.exit(3)
+    
+    sys.exit(main(parsed_args))

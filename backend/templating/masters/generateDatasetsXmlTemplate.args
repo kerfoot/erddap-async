@@ -1,0 +1,1 @@
+EDDTableFromNcCFFiles {source_dir} .*\.nc {netcdf_filename} obs "" "" "" "" "" time "" http://oceanobservatories.org OOI "" ""

@@ -1,0 +1,549 @@
+stream_content,name,time_parameter,stream_type,binsize_minutes,id,description
+Tide Measurement Data Products,presf_tide_measurement,7,Science,1440,15,Science Tide Measurement Data Products
+Status Data,presf_operating_status,7,Engineering,1440,16,Engineering Status Data
+Calibration Data,presf_calibration_coefficients,7,Engineering,20160,17,Engineering Calibration Data
+Data Products,ctdbp_no_sample,7,Science,1440,23,Science Data Products
+Hardware Data,ctdbp_no_hardware,7,Engineering,20160,24,Engineering Hardware Data
+Calibration Data,ctdbp_no_calibration_coefficients,7,Engineering,20160,25,Engineering Calibration Data
+Status Data,ctdbp_no_status,7,Engineering,20160,26,Engineering Status Data
+Configuration Data,ctdbp_no_configuration,7,Engineering,20160,27,Engineering Configuration Data
+Data Products,parad_sa_sample,7,Science,720,28,Science Data Products
+Data Products,prest_real_time,7,Science,20160,31,Science Data Products
+Reference Oscillator Data,prest_reference_oscillator,7,Engineering,10080,32,Engineering Reference Oscillator Data
+Configuration Data,prest_configuration_data,7,Engineering,20160,33,Engineering Configuration Data
+Device Status,prest_device_status,7,Engineering,20160,34,Engineering Device Status
+Event Counter Data,prest_event_counter,7,Engineering,20160,35,Engineering Event Counter Data
+Hardware Data,prest_hardware_data,7,Engineering,20160,36,Engineering Hardware Data
+,phsen_control_record,7,,20160,41,
+Dev1 Data,pco2w_b_dev1_data_record,7,Engineering,20160,43,Engineering Dev1 Data
+Status Data,pco2w_a_regular_status,7,Engineering,20160,44,Engineering Status Data
+Configuration Data,pco2w_a_configuration,7,Engineering,20160,45,Engineering Configuration Data
+Data Products,trhph_sample,7,Science,10080,47,Science Data Products
+Hardware Configuration,vel3d_cd_hardware_configuration,7,Engineering,20160,56,Engineering Hardware Configuration
+Header Configuration,vel3d_cd_head_configuration,7,Engineering,20160,57,Engineering Header Configuration
+User Configuration,vel3d_cd_user_configuration,7,Engineering,20160,58,Engineering User Configuration
+Data Products,optaa_sample,7,Science,720,61,Science Data Products
+Status Data,optaa_status,7,Engineering,20160,62,Engineering Status Data
+Data Products,tmpsf_sample,7,Science,10080,64,Science Data Products
+Data,tmpsf_engineering,7,Engineering,20160,65,Engineering Data
+Data Products,vel3d_b_sample,7,Science,1440,67,Science Data Products
+Data,vel3d_b_engineering,7,Engineering,20160,68,Engineering Data
+Data Products,adcp_pd0_earth_parsed,7,Science,1440,70,
+,adcp_pd12_parsed,7,,1440,71,
+,adcp_waves_parsed,7,,1440,72,
+Compass Data,adcp_compass_calibration,7,Calibration,20160,73,Calibration Compass Data
+System Configuration Data,adcp_system_configuration,7,Engineering,20160,74,Engineering System Configuration Data
+Data Header,vel3d_cd_data_header,7,Engineering,20160,75,Engineering Data Header
+Data Products,vel3d_cd_velocity_data,7,Science,360,76,Science Data Products
+System Data,vel3d_cd_system_data,7,Engineering,1440,77,Engineering System Data
+Clock Data,vel3d_clock_data,7,Engineering,20160,78,Engineering Clock Data
+Battery Voltage,vel3d_cd_battery_voltage,7,Engineering,20160,79,Engineering Battery Voltage
+Identification String,vel3d_cd_identification_string,7,Engineering,20160,80,Engineering Identification String
+Wave Burst Data Products,presf_wave_burst,7,Science,1440,84,Science Wave Burst Data Products
+Wave Statistics Data Products,presf_wave_statistics,7,Science,1440,85,Science Wave Statistics Data Products
+NANO Sensor Data Products,botpt_nano_sample,7,Science,180,87,Science NANO Sensor Data Products
+LILY Sensor Data Products,botpt_lily_sample,7,Science,1440,88,Science LILY Sensor Data Products
+IRIS Sensor Data Products,botpt_iris_sample,7,Science,1440,89,Science IRIS Sensor Data Products
+HEAT Sensor Data Products,botpt_heat_sample,7,Science,4320,90,Science HEAT Sensor Data Products
+Data Products,adcp_pd0_beam_parsed,7,Science,1440,108,
+Control Record,pco2w_a_control_record,7,Engineering,1440,111,Engineering Control Record
+Data Products,phsen_data_record,7,Science,20160,112,Science Data Products
+Status Data,phsen_regular_status,7,Engineering,20160,114,Engineering Status Data
+Configuration Data,phsen_configuration,7,Engineering,20160,115,Engineering Configuration Data
+In-Air Data Products (DCL),pco2a_a_dcl_instrument_air,7,Science,20160,121,Science In-Air Data Products (DCL)
+In-Water Data Products (DCL),pco2a_a_dcl_instrument_water,7,Science,20160,122,Science In-Water Data Products (DCL)
+,metbk_sample,7,,1440,124,
+Status Data,metbk_status,7,Engineering,20160,125,Engineering Status Data
+Pump Status,rasfl_sample_result,7,Engineering,20160,126,Engineering Pump Status
+Data Products,d1000_sample,7,Science,10080,128,Science Data Products
+Pump Status,ppsdn_sample_result,7,Engineering,20160,129,Engineering Pump Status
+Data Products,spkir_data_record,7,Science,180,131,Science Data Products
+Data Products,flort_d_data_record,7,Science,1440,133,Science Data Products
+,ctdpf_parsed,7,,1440,136,
+,phsen_parsed,7,,1440,152,
+Data Products,ctdpf_ckl_wfp_instrument,7,Science,10080,153,Science Data Products
+Metadata,ctdpf_ckl_wfp_metadata,7,Engineering,20160,154,Engineering Metadata
+Data Products,dofst_k_wfp_instrument,7,Science,10080,155,Science Data Products
+Metadata,dofst_k_wfp_metadata,7,Engineering,20160,156,Engineering Metadata
+Data Products (STC),flort_kn_stc_imodem_instrument,7,Science,1440,157,Science Data Products (STC)
+Data Products (STC),parad_k__stc_imodem_instrument,7,Science,20160,158,Science Data Products (STC)
+STC Inductive Modem Status,wfp_eng_stc_imodem_status,7,Engineering,20160,159,Engineering STC Inductive Modem Status
+STC Inductive Modem Data,wfp_eng_stc_imodem_engineering,7,Engineering,20160,160,Engineering STC Inductive Modem Data
+Radar Target Enhancer Data (DCL),rte_o_dcl_instrument,7,Engineering,20160,161,Engineering Radar Target Enhancer Data (DCL)
+Accelerometer Data (DCL),mopak_o_dcl_accel,7,Engineering,180,162,Engineering Accelerometer Data (DCL)
+Rate Data (DCL),mopak_o_dcl_rate,7,Engineering,1440,163,Engineering Rate Data (DCL)
+Data Products (STC),vel3d_k_wfp_stc_instrument,7,Science,10080,164,Science Data Products (STC)
+Metadata (STC),vel3d_k_wfp_stc_metadata,7,Engineering,20160,165,Engineering Metadata (STC)
+Metadata (STC),adcps_jln_stc_metadata,7,Engineering,20160,167,Engineering Metadata (STC)
+STC Inductive Modem Start Time,wfp_eng_stc_imodem_start_time,7,Engineering,20160,168,Engineering STC Inductive Modem Start Time
+Data Products,vel3d_k_wfp_instrument,7,Science,4320,170,Science Data Products
+Data Products,ctdgv_m_glider_instrument,7,Science,20160,171,Science Data Products
+Data Products,dosta_abcdjm_glider_instrument,7,Science,20160,172,Science Data Products
+Data Products,dosta_abcdjm_glider_recovered,7,Science,4320,173,Science Data Products
+Data Products,flord_m_glider_instrument,7,Science,20160,174,Science Data Products
+Data Products,flort_m_glider_instrument,7,Science,1440,175,Science Data Products
+Data Products,flort_m_glider_recovered,7,Science,1440,176,Science Data Products
+Data Products,parad_m_glider_instrument,7,Science,20160,177,Science Data Products
+Data Products,parad_m_glider_recovered,7,Science,360,178,Science Data Products
+Data,glider_eng_telemetered,7,Engineering,1440,179,Engineering Data
+Data,glider_eng_recovered,7,Engineering,1440,180,Engineering Data
+Science Status Data,glider_eng_sci_telemetered,7,Engineering,20160,181,Engineering Science Status Data
+Metadata,glider_eng_metadata,7,Engineering,20160,182,Engineering Metadata
+Science Status Data,glider_eng_sci_recovered,7,Engineering,20160,183,Engineering Science Status Data
+STC Controller Status Data,cg_stc_eng_stc,7,Engineering,20160,184,Engineering STC Controller Status Data
+Data Products,dosta_ln_wfp_instrument,7,Science,20160,186,Science Data Products
+,dosta_ln_wfp_sio_instrument,7,,1440,187,
+Data Products,flord_l_wfp_instrument,7,Science,20160,188,Science Data Products
+,flord_l_wfp_sio_instrument,7,,1440,189,
+Glider Mule Metadata,ctdpf_ckl_wfp_sio_mule_metadata,7,Engineering,20160,190,Engineering Glider Mule Metadata
+Status Data,trhph_status,7,Engineering,20160,191,Engineering Status Data
+Status Data,flort_d_status,7,Engineering,10080,192,Engineering Status Data
+Metadata,glider_eng_metadata_recovered,7,Engineering,20160,193,Engineering Metadata
+Configuration Record Data,spkir_a_configuration_record,7,Engineering,20160,194,Engineering Configuration Record Data
+,sami_regular_status,7,,1440,195,
+Battery Voltage,phsen_battery_voltage,7,Engineering,20160,196,Engineering Battery Voltage
+Thermistor Voltage,phsen_thermistor_voltage,7,Engineering,20160,197,Engineering Thermistor Voltage
+Control Status Data,sio_eng_control_status,7,Engineering,20160,300,Engineering Control Status Data
+Glider Mule Data Products,adcps_jln_sio_mule_instrument,7,Science,1440,301,Science Glider Mule Data Products
+Ancillary System Data,adcp_ancillary_system_data,7,Engineering,20160,302,Engineering Ancillary System Data
+Transmit Path Data,adcp_transmit_path,7,Engineering,20160,303,Engineering Transmit Path Data
+LILY Leveling Data,botpt_lily_leveling,7,Calibration,20160,304,Calibration LILY Leveling Data 
+Instrument Status,botpt_status,7,Engineering,20160,306,Engineering Instrument Status
+Data Products,thsph_sample,7,Science,1440,307,Science Data Products
+String Data,vel3d_k_wfp_string,7,Engineering,1440,308,Engineering String Data
+Metadata,vel3d_k_wfp_metadata,7,Engineering,20160,309,Engineering Metadata
+Data Products (Inductive Modem),ctdmo_ghqr_imodem_instrument,7,Science,20160,310,Science Data Products (Inductive Modem)
+Data Products (Inductive Modem),ctdmo_ghqr_imodem_instrument_recovered,7,Science,20160,311,Science Data Products (Inductive Modem)
+Glider Mule Data Products,phsen_abcdef_sio_mule_instrument,7,Science,20160,312,Science Glider Mule Data Products
+Glider Mule Metadata,phsen_abcdef_sio_mule_metadata,7,Engineering,20160,313,Engineering Glider Mule Metadata
+Data Products,vel3d_l_wfp_instrument,7,Science,1440,314,Science Data Products
+Glider Mule Metadata,vel3d_l_wfp_sio_mule_metadata,7,Engineering,20160,315,Engineering Glider Mule Metadata
+,wfp_eng_wfp_sio_mule_start_time,7,,20160,316,Engineering Glider Mule Start Time
+,wfp_eng_wfp_sio_mule_status,7,,20160,317,Engineering Glider Mule Status
+,wfp_eng_wfp_sio_mule_engineering,7,,20160,318,Engineering Glider Mule Data
+Data Products (STC),adcps_jln_stc_instrument,7,Science,20160,319,Science Data Products (STC)
+Hardware Configuration,velpt_hardware_configuration,7,Engineering,20160,321,Engineering Hardware Configuration
+Head Configuration,velpt_head_configuration,7,Engineering,20160,322,Engineering Head Configuration
+Configuration Data,velpt_user_configuration,7,Engineering,20160,323,Engineering Configuration Data
+,velpt_data_header,7,,1440,324,
+Data Products,velpt_velocity_data,7,Science,720,325,Science Data Products
+,velpt_system_data,7,,1440,326,
+Clock Data,velpt_clock_data,7,Engineering,20160,327,Engineering Clock Data
+Battery Voltage,velpt_battery_voltage,7,Engineering,20160,328,Engineering Battery Voltage
+Identification String,velpt_identification_string,7,Engineering,20160,329,Engineering Identification String
+Optode Data Products,ctdpf_optode_sample,7,Science,1440,330,Science Optode Data Products
+Optode Hardware Data,ctdpf_optode_hardware,7,Engineering,20160,331,Engineering Optode Hardware Data
+Optode Calibration Data,ctdpf_optode_calibration_coefficients,7,Engineering,20160,332,Engineering Optode Calibration Data
+Optode Status Data,ctdpf_optode_status,7,Engineering,20160,333,Engineering Optode Status Data
+Optode Configuration Data,ctdpf_optode_configuration,7,Engineering,20160,334,Engineering Optode Configuration Data
+Optode Settings,ctdpf_optode_settings,7,Engineering,20160,335,Engineering Optode Settings
+Optode Settings,ctdbp_no_optode_settings,7,Engineering,20160,336,Engineering Optode Settings
+Data Products,ctdpf_sbe43_sample,7,Science,720,337,Science Data Products
+Hardware Data,ctdpf_sbe43_hardware,7,Engineering,20160,338,Engineering Hardware Data
+Calibration Data,ctdpf_sbe43_calibration_coefficients,7,Engineering,20160,339,Engineering Calibration Data
+Status Data,ctdpf_sbe43_status,7,Engineering,20160,340,Engineering Status Data
+Configuration Data,ctdpf_sbe43_configuration,7,Engineering,20160,341,Engineering Configuration Data
+Data Products,nutnr_a_sample,7,Science,1440,342,Science Data Products
+Status Data,nutnr_a_status,7,Engineering,20160,343,Engineering Status Data
+Test Data,nutnr_a_test,7,Engineering,20160,344,Engineering Test Data
+MCU Status Data,massp_mcu_status,7,Engineering,20160,345,Engineering MCU Status Data
+Turbopump Status Data,massp_turbo_status,7,Engineering,20160,346,Engineering Turbopump Status Data
+RGA Status Data,massp_rga_status,7,Engineering,20160,347,Engineering RGA Status Data
+Data Products,massp_rga_sample,7,Science,1440,348,Science Data Products
+Data Header,hpies_data_header,7,Science,20160,349,Science Data Header
+Horizontal Electric Field Data Products,horizontal_electric_field,7,Science,1440,350,Science Horizontal Electric Field Data Products
+Motor Current Data,motor_current,7,Engineering,10080,351,Engineering Motor Current Data
+Calibration Status,calibration_status,7,Engineering,10080,352,Engineering Calibration Status
+Status Data,hpies_status,7,Engineering,20160,353,Engineering Status Data
+Data Products,echo_sounding,7,Science,20160,354,Science Data Products
+Status Data,ies_status,7,Engineering,1440,355,Engineering Status Data
+STM Timestamp Data,stm_timestamp,7,Engineering,1440,356,Engineering STM Timestamp Data
+Data Products,vadcp_5thbeam_pd0_beam_parsed,7,Science,1440,357,
+Data,vadcp_5thbeam_compass_calibration,7,Calibration,20160,358,
+Thermistor Voltage,pco2w_b_thermistor_voltage,7,Engineering,20160,359,Engineering Thermistor Voltage
+Battery Voltage,pco2w_b_battery_voltage,7,Engineering,20160,361,Engineering Battery Voltage
+Configuration Data,pco2w_b_configuration,7,Engineering,20160,362,Engineering Configuration Data
+Status Data,pco2w_b_regular_status,7,Engineering,20160,363,Engineering Status Data
+Control Record,pco2w_b_control_record,7,Engineering,1440,364,Engineering Control Record
+Thermistor Voltage,pco2w_a_thermistor_voltage,7,Engineering,20160,366,Engineering Thermistor Voltage
+Battery Voltage,pco2w_a_battery_voltage,7,Engineering,20160,367,Engineering Battery Voltage
+Configuration Data,parad_sa_config,7,Engineering,20160,368,Engineering Configuration Data
+Data,vadcp_4beam_system_configuration,7,Engineering,20160,370,
+Data,vadcp_5thbeam_system_configuration,7,Engineering,20160,371,
+Data,vadcp_ancillary_system_data,7,Engineering,20160,372,
+Data,vadcp_transmit_path,7,Engineering,20160,373,
+Data Products,ctdgv_m_glider_instrument_recovered,7,Science,4320,376,Science Data Products
+Data Products,flord_m_glider_instrument_recovered,7,Science,720,377,Science Data Products
+Image Metadata,camds_image_metadata,7,Engineering,20160,379,Engineering Image Metadata
+Health Status Data,camds_health_status,7,Engineering,20160,380,Engineering Health Status Data
+Disk Status Data,camds_disk_status,7,Engineering,20160,381,Engineering Disk Status Data
+,zplsc_status,7,,20160,382,Engineering Instrument Status
+Data Products,vadcp_pd0_beam_parsed,7,Science,10080,383,
+Data Products,pco2w_a_sami_data_record,7,Science,20160,384,Science Data Products
+Data Products,pco2w_b_sami_data_record,7,Science,20160,385,Science Data Products
+Data Products,ctdpf_ckl_wfp_instrument_recovered,7,Science,10080,386,Science Data Products
+Metadata,ctdpf_ckl_wfp_metadata_recovered,7,Engineering,20160,387,Engineering Metadata
+Data Products,dofst_k_wfp_instrument_recovered,7,Science,10080,388,Science Data Products
+Metadata,dofst_k_wfp_metadata_recovered,7,Engineering,20160,389,Engineering Metadata
+Data Products (STC),parad_k__stc_imodem_instrument_recovered,7,Science,20160,390,Science Data Products (STC)
+STC Inductive Modem Start Time,wfp_eng_stc_imodem_start_time_recovered,7,Engineering,20160,391,Engineering STC Inductive Modem Start Time
+,wfp_eng__stc_imodem_status_recovered,7,,1440,392,
+STC Inductive Modem Data,wfp_eng_stc_imodem_engineering_recovered,7,Engineering,20160,393,Engineering STC Inductive Modem Data
+Data Products (STC),flort_kn_stc_imodem_instrument_recovered,7,Science,1440,394,Science Data Products (STC)
+STC Controller Status Data,cg_stc_eng_stc_recovered,7,Engineering,20160,395,Engineering STC Controller Status Data
+Accelerometer Data (DCL),mopak_o_dcl_accel_recovered,7,Engineering,180,396,Engineering Accelerometer Data (DCL)
+Rate Data (DCL),mopak_o_dcl_rate_recovered,7,Engineering,1440,397,Engineering Rate Data (DCL)
+Radar Target Enhancer Data (DCL),rte_o_dcl_instrument_recovered,7,Engineering,20160,398,Engineering Radar Target Enhancer Data (DCL)
+Full ASCII Data Products (DCL),nutnr_b_dcl_full_instrument,7,Science,20160,399,Science Full ASCII Data Products (DCL)
+Full ASCII Data Products (DCL),nutnr_b_dcl_full_instrument_recovered,7,Science,10080,400,Science Full ASCII Data Products (DCL)
+Full ASCII Metadata (DCL),nutnr_b_dcl_full_metadata,7,Engineering,20160,401,Engineering Full ASCII Metadata (DCL)
+Full ASCII Metadata (DCL),nutnr_b_dcl_full_metadata_recovered,7,Engineering,20160,402,Engineering Full ASCII Metadata (DCL)
+Calibration Data,pco2w_a_sami_data_record_cal,7,Engineering,20160,403,Engineering Calibration Data
+Calibration Data,pco2w_b_sami_data_record_cal,7,Engineering,20160,404,Engineering Calibration Data
+STC Inductive Modem Status,wfp_eng_stc_imodem_status_recovered,7,Engineering,20160,405,Engineering STC Inductive Modem Status
+Data Products (DCL),flort_dj_dcl_instrument,7,Science,10080,406,Science Data Products (DCL)
+Data Products (DCL),flort_dj_dcl_instrument_recovered,7,Science,10080,407,Science Data Products (DCL)
+Data Products (DCL),metbk_a_dcl_instrument,7,Science,20160,408,Science Data Products (DCL)
+Data Products (DCL),metbk_a_dcl_instrument_recovered,7,Science,20160,409,Science Data Products (DCL)
+Data Products (DCL),dosta_abcdjm_dcl_instrument,7,Science,10080,410,Science Data Products (DCL)
+Data Products (DCL),dosta_abcdjm_dcl_instrument_recovered,7,Science,10080,411,Science Data Products (DCL)
+Data Products (DCL),spkir_abj_dcl_instrument,7,Science,10080,412,Science Data Products (DCL)
+Data Products (DCL),spkir_abj_dcl_instrument_recovered,7,Science,4320,413,Science Data Products (DCL)
+Data Products,phsen_abcdef_instrument,7,Science,20160,414,Science Data Products
+Metadata,phsen_abcdef_metadata,7,Engineering,20160,415,Engineering Metadata
+Data Products,pco2w_abc_instrument,7,Science,20160,416,Science Data Products
+Instrument Blank Data,pco2w_abc_instrument_blank,7,Science,1440,417,Science Instrument Blank Data
+Metadata,pco2w_abc_metadata,7,Engineering,1440,418,Engineering Metadata
+Power Data,pco2w_abc_power,7,Engineering,1440,419,Engineering Power Data
+Data Products (DCL),pco2w_abc_dcl_instrument,7,Science,20160,420,Science Data Products (DCL)
+Data Products (DCL),pco2w_abc_dcl_instrument_recovered,7,Science,20160,421,Science Data Products (DCL)
+Instrument Blank Data (DCL),pco2w_abc_dcl_instrument_blank,7,Science,20160,422,Science Instrument Blank Data (DCL)
+Instrument Blank Data (DCL),pco2w_abc_dcl_instrument_blank_recovered,7,Science,20160,423,Science Instrument Blank Data (DCL)
+Metadata (DCL),pco2w_abc_dcl_metadata,7,Engineering,20160,424,Engineering Metadata (DCL)
+Metadata (DCL),pco2w_abc_dcl_metadata_recovered,7,Engineering,20160,425,Engineering Metadata (DCL)
+Power Data (DCL),pco2w_abc_dcl_power,7,Engineering,20160,426,Engineering Power Data (DCL)
+Power Data (DCL),pco2w_abc_dcl_power_recovered,7,Engineering,20160,427,Engineering Power Data (DCL)
+Data Products (DCL),phsen_abcdef_dcl_instrument,7,Science,20160,428,Science Data Products (DCL)
+Data Products (DCL),phsen_abcdef_dcl_instrument_recovered,7,Science,20160,429,Science Data Products (DCL)
+Metadata (DCL),phsen_abcdef_dcl_metadata,7,Engineering,20160,430,Engineering Metadata (DCL)
+Metadata (DCL),phsen_abcdef_dcl_metadata_recovered,7,Engineering,20160,431,Engineering Metadata (DCL)
+Concentration ASCII Data Products (DCL),nutnr_b_dcl_conc_instrument,7,Science,20160,432,Science Concentration ASCII Data Products (DCL)
+Concentration ASCII Data Products (DCL),nutnr_b_dcl_conc_instrument_recovered,7,Science,10080,433,Science Concentration ASCII Data Products (DCL)
+Concentration ASCII Metadata (DCL),nutnr_b_dcl_conc_metadata,7,Engineering,20160,434,Engineering Concentration ASCII Metadata (DCL)
+Concentration ASCII Metadata (DCL),nutnr_b_dcl_conc_metadata_recovered,7,Engineering,20160,435,Engineering Concentration ASCII Metadata (DCL)
+Tide Measurement Data Products (DCL),presf_abc_dcl_tide_measurement,7,Science,20160,436,Science Tide Measurement Data Products (DCL)
+Tide Measurement Data Products (DCL),presf_abc_dcl_tide_measurement_recovered,7,Science,20160,437,Science Tide Measurement Data Products (DCL)
+Wave Burst Data Products (DCL),presf_abc_dcl_wave_burst,7,Science,20160,438,Science Wave Burst Data Products (DCL)
+Wave Burst Data Products (DCL),presf_abc_dcl_wave_burst_recovered,7,Science,20160,439,Science Wave Burst Data Products (DCL)
+Data Products,adcps_jln_instrument,7,Science,20160,444,
+,adcps_jln_beam_instrument,7,,1440,445,
+In-Air Data Products (DCL),pco2a_a_dcl_instrument_air_recovered,7,Science,20160,446,Science In-Air Data Products (DCL)
+In-Water Data Products (DCL),pco2a_a_dcl_instrument_water_recovered,7,Science,20160,447,Science In-Water Data Products (DCL)
+,pco2a_a_dcl_metadata,7,,20160,448,
+,pco2a_a_dcl_metadata_recovered,7,,20160,449,
+Metadata (Inductive Modem),ctdmo_ghqr_imodem_metadata,7,Engineering,20160,450,Engineering Metadata (Inductive Modem)
+Metadata (Inductive Modem),ctdmo_ghqr_imodem_metadata_recovered,7,Engineering,20160,451,Engineering Metadata (Inductive Modem)
+PD8 Format Data Products (DCL),adcpt_acfgm_pd8_dcl_instrument,7,Science,20160,452,Science PD8 Format Data Products (DCL)
+PD8 Format Data Products (DCL),adcpt_acfgm_pd8_dcl_instrument_recovered,7,Science,20160,453,Science PD8 Format Data Products (DCL)
+Data Products (DCL),optaa_dj_dcl_instrument,7,Science,10080,456,Science Data Products (DCL)
+Data Products (DCL),optaa_dj_dcl_instrument_recovered,7,Science,10080,457,Science Data Products (DCL)
+Metadata (DCL),optaa_dj_dcl_metadata,7,Engineering,20160,458,Engineering Metadata (DCL)
+Metadata (DCL),optaa_dj_dcl_metadata_recovered,7,Engineering,20160,459,Engineering Metadata (DCL)
+Non Directional Data Products (DCL),wavss_a_dcl_non_directional,7,Science,20160,460,Science Non Directional Data Products (DCL)
+Non Directional Data Products (DCL),wavss_a_dcl_non_directional_recovered,7,Science,20160,461,Science Non Directional Data Products (DCL)
+Mean Directional Data Products (DCL),wavss_a_dcl_mean_directional,7,Science,20160,463,Science Mean Directional Data Products (DCL)
+Mean Directional Data Products (DCL),wavss_a_dcl_mean_directional_recovered,7,Science,20160,464,Science Mean Directional Data Products (DCL)
+Motion Data Products (DCL),wavss_a_dcl_motion,7,Science,20160,465,Science Motion Data Products (DCL)
+Motion Data Products (DCL),wavss_a_dcl_motion_recovered,7,Science,20160,466,Science Motion Data Products (DCL)
+Fourier Data Products (DCL),wavss_a_dcl_fourier,7,Science,20160,467,Science Fourier Data Products (DCL)
+Fourier Data Products (DCL),wavss_a_dcl_fourier_recovered,7,Science,20160,468,Science Fourier Data Products (DCL)
+Data Products (DCL),velpt_ab_dcl_instrument,7,Science,20160,471,Science Data Products (DCL)
+Data Products (DCL),velpt_ab_dcl_instrument_recovered,7,Science,10080,472,Science Data Products (DCL)
+Diagnostics Metadata (DCL),velpt_ab_dcl_diagnostics_metadata,7,Engineering,20160,473,Engineering Diagnostics Metadata (DCL)
+Diagnostics Metadata (DCL),velpt_ab_dcl_diagnostics_metadata_recovered,7,Engineering,20160,474,Engineering Diagnostics Metadata (DCL)
+Diagnostics Data (DCL),velpt_ab_dcl_diagnostics,7,Engineering,20160,475,Engineering Diagnostics Data (DCL)
+Diagnostics Data (DCL),velpt_ab_dcl_diagnostics_recovered,7,Engineering,1440,476,Engineering Diagnostics Data (DCL)
+Instrument Data Products,ctdmo_ghqr_instrument_recovered,7,Science,20160,480,Science Instrument Data Products
+Offset Data,ctdmo_ghqr_offset_recovered,7,Engineering,20160,481,Engineering Offset Data
+Data Products,ctdpf_ckl_mmp_cds_instrument,7,Science,1440,482,Science Data Products
+Data Products,ctdpf_j_cspp_instrument,7,Science,20160,483,Science Data Products
+Data Products,ctdpf_j_cspp_instrument_recovered,7,Science,20160,484,Science Data Products
+Metadata,ctdpf_j_cspp_metadata,7,Engineering,20160,485,Engineering Metadata
+Metadata,ctdpf_j_cspp_metadata_recovered,7,Engineering,20160,486,Engineering Metadata
+Data Products,dosta_abcdjm_cspp_instrument,7,Science,20160,487,Science Data Products
+Data Products,dosta_abcdjm_cspp_instrument_recovered,7,Science,20160,488,Science Data Products
+Metadata,dosta_abcdjm_cspp_metadata,7,Engineering,20160,489,Engineering Metadata
+Metadata,dosta_abcdjm_cspp_metadata_recovered,7,Engineering,20160,490,Engineering Metadata
+Data Products,dosta_abcdjm_mmp_cds_instrument,7,Science,20160,491,Science Data Products
+Data Products,dosta_abcdjm_sio_instrument,7,Science,20160,492,Science Data Products
+Data Products,dosta_abcdjm_sio_instrument_recovered,7,Science,20160,493,Science Data Products
+Metadata,dosta_abcdjm_sio_metadata,7,Engineering,20160,494,Engineering Metadata
+Metadata,dosta_abcdjm_sio_metadata_recovered,7,Engineering,20160,495,Engineering Metadata
+Data Products,dosta_ln_wfp_instrument_recovered,7,Science,20160,496,Science Data Products
+Data Products,flcdr_x_mmp_cds_instrument,7,Science,1440,498,Science Data Products
+Data Products,flntu_x_mmp_cds_instrument,7,Science,1440,499,Science Data Products
+Data Products,flord_l_wfp_instrument_recovered,7,Science,20160,500,Science Data Products
+CSPP Data Products,flort_dj_cspp_instrument,7,Science,20160,502,Science CSPP Data Products
+CSPP Data Products,flort_dj_cspp_instrument_recovered,7,Science,20160,503,Science CSPP Data Products
+Metadata,flort_dj_cspp_metadata,7,Engineering,20160,504,Engineering Metadata
+Metadata,flort_dj_cspp_metadata_recovered,7,Engineering,20160,505,Engineering Metadata
+CPM Controller Status Data,cg_cpm_eng_cpm,7,Engineering,20160,506,Engineering CPM Controller Status Data
+CPM Controller Status Data,cg_cpm_eng_cpm_recovered,7,Engineering,20160,507,Engineering CPM Controller Status Data
+Data Products,nutnr_b_instrument_recovered,7,Science,1440,508,Science Data Products
+Metadata,nutnr_b_metadata_recovered,7,Engineering,10080,509,Engineering Metadata
+Glider Mule Data Products,ctdmo_ghqr_sio_mule_instrument,7,Science,20160,510,Science Glider Mule Data Products
+Glider Mule Offset Data,ctdmo_ghqr_sio_offset,7,Engineering,20160,511,Engineering Glider Mule Offset Data
+Data Products,vel3d_l_wfp_instrument_recovered,7,Science,1440,512,Science Data Products
+Metadata,vel3d_l_wfp_metadata_recovered,7,Engineering,20160,513,Engineering Metadata
+Data Products,dpc_ctd_instrument,7,Science,1440,514,
+Data Products,dpc_ctd_instrument_recovered,7,Science,1440,515,Science Data Products
+Data Products,dpc_flnturtd_instrument,7,Science,1440,516,
+Data Products,dpc_flnturtd_instrument_recovered,7,Science,1440,517,Science Data Products
+Data Products,dpc_flcdrtd_instrument,7,Science,1440,518,
+Data Products,dpc_flcdrtd_instrument_recovered,7,Science,1440,519,Science Data Products
+Data Products,dpc_acm_instrument,7,Science,1440,520,
+Data Products,dpc_acm_instrument_recovered,7,Science,1440,521,Science Data Products
+Data Products,dpc_optode_instrument,7,Science,1440,522,
+Data Products,dpc_optode_instrument_recovered,7,Science,1440,523,Science Data Products
+Data Products,dpc_acs_instrument_recovered,7,Science,1440,524,Science Data Products
+Instrument Metadata,velpt_ab_instrument_metadata_recovered,7,Engineering,20160,526,Engineering Instrument Metadata
+Data Products,velpt_ab_instrument_recovered,7,Science,1440,527,Science Data Products
+Instrument Diagnostics Metadata,velpt_ab_diagnostics_metadata_recovered,7,Engineering,20160,528,Engineering Instrument Diagnostics Metadata
+Instrument Diagnostics Data,velpt_ab_diagnostics_recovered,7,Engineering,1440,529,Engineering Instrument Diagnostics Data
+,vel3d_a_mmp_cds_instrument,7,,1440,530,
+Data Products,optaa_ac_mmp_cds_instrument,7,Science,1440,531,Science Data Products
+Message Counts Data,cg_dcl_eng_dcl_msg_counts,7,Engineering,20160,532,Engineering Message Counts Data
+Message Counts Data,cg_dcl_eng_dcl_msg_counts_recovered,7,Engineering,20160,533,Engineering Message Counts Data
+CPU Uptime Data,cg_dcl_eng_dcl_cpu_uptime,7,Engineering,20160,534,Engineering CPU Uptime Data
+CPU Uptime Data,cg_dcl_eng_dcl_cpu_uptime_recovered,7,Engineering,20160,535,Engineering CPU Uptime Data
+Error Data,cg_dcl_eng_dcl_error,7,Engineering,20160,536,Engineering Error Data
+Error Data,cg_dcl_eng_dcl_error_recovered,7,Engineering,20160,537,Engineering Error Data
+GPS Data,cg_dcl_eng_dcl_gps,7,Engineering,20160,538,Engineering GPS Data
+GPS Data,cg_dcl_eng_dcl_gps_recovered,7,Engineering,20160,539,Engineering GPS Data
+Pulse Data,cg_dcl_eng_dcl_pps,7,Engineering,20160,540,Engineering Pulse Data
+Pulse Data,cg_dcl_eng_dcl_pps_recovered,7,Engineering,20160,541,Engineering Pulse Data
+Leak Detect Data,cg_dcl_eng_dcl_superv,7,Engineering,20160,542,Engineering Leak Detect Data
+Leak Detect Data,cg_dcl_eng_dcl_superv_recovered,7,Engineering,20160,543,Engineering Leak Detect Data
+Data Log Manager,cg_dcl_eng_dcl_dlog_mgr,7,Engineering,20160,544,Engineering Data Log Manager
+Data Log Manager,cg_dcl_eng_dcl_dlog_mgr_recovered,7,Engineering,20160,545,Engineering Data Log Manager
+Data Logger Status,cg_dcl_eng_dcl_dlog_status,7,Engineering,20160,546,Engineering Data Logger Status
+Data Logger Status,cg_dcl_eng_dcl_dlog_status_recovered,7,Engineering,20160,547,Engineering Data Logger Status
+Accelerometer Data,cg_dcl_eng_dcl_dlog_aarm,7,Engineering,20160,548,Engineering Accelerometer Data
+Accelerometer Data,cg_dcl_eng_dcl_dlog_aarm_recovered,7,Engineering,20160,549,Engineering Accelerometer Data
+DCL Status Data,cg_dcl_eng_dcl_status,7,Engineering,20160,550,Engineering DCL Status Data
+DCL Status Data,cg_dcl_eng_dcl_status_recovered,7,Engineering,20160,551,Engineering DCL Status Data
+LOG9 Data Products,adcpt_m_instrument_log9_recovered,7,Science,1440,552,Science LOG9 Data Products
+Directional Wave Spectra Data,adcpt_m_instrument_dspec_recovered,7,Science,1440,553,Science Directional Wave Spectra Data
+F Coefficient Data,adcpt_m_instrument_fcoeff_recovered,7,Science,1440,554,Science F Coefficient Data
+Wave Data Products,adcpt_m_wvs_recovered,7,Science,1440,555,Science Wave Data Products
+Data,dpc_mmp_instrument,7,Engineering,1440,556,
+Data,dpc_mmp_instrument_recovered,7,Engineering,1440,557,Engineering Data
+Data Products,flort_dj_sio_instrument,7,Science,1440,558,Science Data Products
+Data Products,flort_dj_sio_instrument_recovered,7,Science,1440,559,Science Data Products
+Data Products (Inductive Modem),pco2w_abc_imodem_instrument,7,Science,20160,560,Science Data Products (Inductive Modem)
+Data Products (Inductive Modem),pco2w_abc_imodem_instrument_recovered,7,Science,1440,561,Science Data Products (Inductive Modem)
+Instrument Blank Data (Inductive Modem),pco2w_abc_imodem_instrument_blank,7,Science,1440,562,Science Instrument Blank Data (Inductive Modem)
+Instrument Blank Data (Inductive Modem),pco2w_abc_imodem_instrument_blank_recovered,7,Science,1440,563,Science Instrument Blank Data (Inductive Modem)
+Control Data (Inductive Modem),pco2w_abc_imodem_control,7,Engineering,1440,564,Engineering Control Data (Inductive Modem)
+Control Data (Inductive Modem),pco2w_abc_imodem_control_recovered,7,Engineering,1440,565,Engineering Control Data (Inductive Modem)
+Power Data (Inductive Modem),pco2w_abc_imodem_power,7,Engineering,1440,566,Engineering Power Data (Inductive Modem)
+Power Data (Inductive Modem),pco2w_abc_imodem_power_recovered,7,Engineering,1440,567,Engineering Power Data (Inductive Modem)
+Metadata (Inductive Modem),pco2w_abc_imodem_metadata,7,Engineering,1440,568,Engineering Metadata (Inductive Modem)
+Metadata (Inductive Modem),pco2w_abc_imodem_metadata_recovered,7,Engineering,1440,569,Engineering Metadata (Inductive Modem)
+Data Products (Inductive Modem),phsen_abcdef_imodem_instrument,7,Science,20160,570,Science Data Products (Inductive Modem)
+Data Products (Inductive Modem),phsen_abcdef_imodem_instrument_recovered,7,Science,20160,571,Science Data Products (Inductive Modem)
+Control Data (Inductive Modem),phsen_abcdef_imodem_control,7,Engineering,20160,572,Engineering Control Data (Inductive Modem)
+Control Data (Inductive Modem),phsen_abcdef_imodem_control_recovered,7,Engineering,20160,573,Engineering Control Data (Inductive Modem)
+Metadata (Inductive Modem),phsen_abcdef_imodem_metadata,7,Engineering,20160,574,Engineering Metadata (Inductive Modem)
+Metadata (Inductive Modem),phsen_abcdef_imodem_metadata_recovered,7,Engineering,20160,575,Engineering Metadata (Inductive Modem)
+Control Status Data,sio_eng_control_status_recovered,7,Engineering,20160,576,Engineering Control Status Data
+Profiler Debug Battery Data,cspp_eng_cspp_dbg_pdbg_batt_eng,7,Engineering,1440,577,Engineering Profiler Debug Battery Data
+Profiler Debug Battery Data,cspp_eng_cspp_dbg_pdbg_batt_eng_recovered,7,Engineering,1440,578,Engineering Profiler Debug Battery Data
+Profiler Debug GPS Data,cspp_eng_cspp_dbg_pdbg_gps_eng,7,Engineering,1440,579,Engineering Profiler Debug GPS Data
+Profiler Debug GPS Data,cspp_eng_cspp_dbg_pdbg_gps_eng_recovered,7,Engineering,1440,580,Engineering Profiler Debug GPS Data
+Profiler Debug Metadata,cspp_eng_cspp_dbg_pdbg_metadata,7,Engineering,1440,581,Engineering Profiler Debug Metadata
+Profiler Debug Metadata,cspp_eng_cspp_dbg_pdbg_metadata_recovered,7,Engineering,1440,582,Engineering Profiler Debug Metadata
+Winch Controller Compass Data,cspp_eng_cspp_wc_hmr_eng,7,Engineering,1440,583,Engineering Winch Controller Compass Data
+Winch Controller Compass Data,cspp_eng_cspp_wc_hmr_eng_recovered,7,Engineering,1440,584,Engineering Winch Controller Compass Data
+Winch Controller Metadata,cspp_eng_cspp_wc_hmr_metadata,7,Engineering,1440,585,Engineering Winch Controller Metadata
+Winch Controller Metadata,cspp_eng_cspp_wc_hmr_metadata_recovered,7,Engineering,1440,586,Engineering Winch Controller Metadata
+Winch Controller Pressure and Velocity Data,cspp_eng_cspp_wc_sbe_eng,7,Engineering,1440,587,Engineering Winch Controller Pressure and Velocity Data
+Winch Controller Pressure and Velocity Data,cspp_eng_cspp_wc_sbe_eng_recovered,7,Engineering,1440,588,Engineering Winch Controller Pressure and Velocity Data
+Winch Controller Pressure and Velocity Metadata,cspp_eng_cspp_wc_sbe_metadata,7,Engineering,1440,589,Engineering Winch Controller Pressure and Velocity Metadata
+Winch Controller Pressure and Velocity Metadata,cspp_eng_cspp_wc_sbe_metadata_recovered,7,Engineering,1440,590,Engineering Winch Controller Pressure and Velocity Metadata
+Winch Motor Data,cspp_eng_cspp_wc_wm_eng,7,Engineering,1440,591,Engineering Winch Motor Data
+Winch Motor Data,cspp_eng_cspp_wc_wm_eng_recovered,7,Engineering,1440,592,Engineering Winch Motor Data
+Winch Motor Metadata,cspp_eng_cspp_wc_wm_metadata,7,Engineering,1440,593,Engineering Winch Motor Metadata
+Winch Motor Metadata,cspp_eng_cspp_wc_wm_metadata_recovered,7,Engineering,1440,594,Engineering Winch Motor Metadata
+Data Products (STC),adcps_jln_stc_instrument_recovered,7,Science,20160,595,Science Data Products (STC)
+Metadata (STC),adcps_jln_stc_metadata_recovered,7,Engineering,20160,596,Engineering Metadata (STC)
+Data Products,parad_j_cspp_instrument,7,Science,20160,597,Science Data Products
+Data Products,parad_j_cspp_instrument_recovered,7,Science,20160,598,Science Data Products
+Metadata,parad_j_cspp_metadata,7,Engineering,20160,599,Engineering Metadata
+Metadata,parad_j_cspp_metadata_recovered,7,Engineering,20160,600,Engineering Metadata
+Data Products,spkir_abj_cspp_instrument,7,Science,20160,601,Science Data Products
+Data Products,spkir_abj_cspp_instrument_recovered,7,Science,20160,602,Science Data Products
+Metadata,spkir_abj_cspp_metadata,7,Engineering,20160,603,Engineering Metadata
+Metadata,spkir_abj_cspp_metadata_recovered,7,Engineering,20160,604,Engineering Metadata
+Data Products,nutnr_j_cspp_instrument,7,Science,1440,605,Science Data Products
+Data Products,nutnr_j_cspp_instrument_recovered,7,Science,1440,606,Science Data Products
+Metadata,nutnr_j_cspp_metadata,7,Engineering,1440,607,Engineering Metadata
+Metadata,nutnr_j_cspp_metadata_recovered,7,Engineering,1440,608,Engineering Metadata
+Data Products,velpt_j_cspp_instrument,7,Science,20160,609,Science Data Products
+Data Products,velpt_j_cspp_instrument_recovered,7,Science,20160,610,Science Data Products
+Metadata,velpt_j_cspp_metadata,7,Engineering,20160,611,Engineering Metadata
+Metadata,velpt_j_cspp_metadata_recovered,7,Engineering,20160,612,Engineering Metadata
+Data Products,optaa_dj_cspp_instrument,7,Science,20160,613,Science Data Products
+Data Products,optaa_dj_cspp_instrument_recovered,7,Science,20160,614,Science Data Products
+Metadata,optaa_dj_cspp_metadata,7,Engineering,20160,615,Engineering Metadata
+Metadata,optaa_dj_cspp_metadata_recovered,7,Engineering,20160,616,Engineering Metadata
+User Configuration (DCL),vel3d_cd_dcl_user_configuration,7,Engineering,1440,617,Engineering User Configuration (DCL)
+User Configuration (DCL),vel3d_cd_dcl_user_configuration_recovered,7,Engineering,1440,618,Engineering User Configuration (DCL)
+Hardware Configuration (DCL),vel3d_cd_dcl_hardware_configuration,7,Engineering,20160,619,Engineering Hardware Configuration (DCL)
+Hardware Configuration (DCL),vel3d_cd_dcl_hardware_configuration_recovered,7,Engineering,20160,620,Engineering Hardware Configuration (DCL)
+Header Configuration (DCL),vel3d_cd_dcl_head_configuration,7,Engineering,20160,621,Engineering Header Configuration (DCL)
+Header Configuration (DCL),vel3d_cd_dcl_head_configuration_recovered,7,Engineering,20160,622,Engineering Header Configuration (DCL)
+Data Header (DCL),vel3d_cd_dcl_data_header,7,Engineering,20160,623,Engineering Data Header (DCL)
+Data Header (DCL),vel3d_cd_dcl_data_header_recovered,7,Engineering,20160,624,Engineering Data Header (DCL)
+Data Products (DCL),vel3d_cd_dcl_velocity_data,7,Science,1440,625,Science Data Products (DCL)
+Data Products (DCL),vel3d_cd_dcl_velocity_data_recovered,7,Science,1440,626,Science Data Products (DCL)
+System Data (DCL),vel3d_cd_dcl_system_data,7,Engineering,1440,627,Engineering System Data (DCL)
+System Data (DCL),vel3d_cd_dcl_system_data_recovered,7,Engineering,1440,628,Engineering System Data (DCL)
+Data Products (DCL),fdchp_a_dcl_instrument,7,Science,20160,629,Science Data Products (DCL)
+Data Products (DCL),fdchp_a_dcl_instrument_recovered,7,Science,20160,630,Science Data Products (DCL)
+,zplsc_metadata,7,,20160,631,Engineering Metadata
+Data (DCL),fuelcell_eng_dcl_recovered,7,Engineering,1440,632,Engineering Data (DCL)
+Data (DCL),fuelcell_eng_dcl_telemetered,7,Engineering,1440,633,Engineering Data (DCL)
+Data Products,osmoi_a_subcon_instrument_recovered,7,Science,1440,634,Science Data Products
+Data Products,rasfl_a_subcon_instrument_recovered,7,Science,1440,635,Science Data Products
+Data Products,ppsdn_a_subcon_instrument_recovered,7,Science,1440,636,Science Data Products
+Upper Coil Data Products,flobn_c_upper_coil_recovered,7,Science,1440,637,Science Upper Coil Data Products
+Lower Coil Data Products,flobn_c_lower_coil_recovered,7,Science,1440,638,Science Lower Coil Data Products
+Position X1 Data,flobn_m_position_x1_recovered,7,Science,1440,639,Science Position X1 Data
+Position X2 Data,flobn_m_position_x2_recovered,7,Science,1440,640,Science Position X2 Data
+Position Y1 Data,flobn_m_position_y1_recovered,7,Science,1440,641,Science Position Y1 Data
+Position Y2 Data,flobn_m_position_y2_recovered,7,Science,1440,642,Science Position Y2 Data
+Position Z1 Data,flobn_m_position_z1_recovered,7,Science,1440,643,Science Position Z1 Data
+Position Z2 Data,flobn_m_position_z2_recovered,7,Science,1440,644,Science Position Z2 Data
+Position Z3 Data,flobn_m_position_z3_recovered,7,Science,1440,645,Science Position Z3 Data
+Position Z4 Data,flobn_m_position_z4_recovered,7,Science,1440,646,Science Position Z4 Data
+Position Z5 Data,flobn_m_position_z5_recovered,7,Science,1440,647,Science Position Z5 Data
+X Flow Rate Data Products,flobn_m_direction_x_flow_rate_recovered,7,Science,1440,648,Science X Flow Rate Data Products
+Y Flow Rate Data Products,flobn_m_direction_y_flow_rate_recovered,7,Science,1440,649,Science Y Flow Rate Data Products
+Z Flow Rate Data Products,flobn_m_direction_z_flow_rate_recovered,7,Science,1440,650,Science Z Flow Rate Data Products
+Ambient Temperature Data Products,flobn_m_ambient_temperature_recovered,7,Science,1440,651,Science Ambient Temperature Data Products
+Data (DCL),hyd_o_dcl_instrument,7,Engineering,1440,652,Engineering Data (DCL)
+Data (DCL),hyd_o_dcl_instrument_recovered,7,Engineering,1440,653,Engineering Data (DCL)
+AUV ADCP Data Products,adcpa_n_auv_instrument,7,Science,1440,654,Science AUV ADCP Data Products
+Metadata,flort_kn_auv_metadata,7,Engineering,1440,655,Engineering Metadata
+Metadata,flort_kn_auv_metadata_recovered,7,Engineering,1440,656,Engineering Metadata
+Data Products,flort_kn_auv_instrument,7,Science,1440,657,Science Data Products
+Data Products,flort_kn_auv_instrument_recovered,7,Science,1440,658,Science Data Products
+Data Products,dosta_ln_auv_instrument,7,Science,1440,659,Science Data Products
+Data Products,dosta_ln_auv_instrument_recovered,7,Science,1440,660,Science Data Products
+Data Products,ctdav_n_auv_instrument,7,Science,1440,661,Science Data Products
+Data Products,ctdav_n_auv_instrument_recovered,7,Science,1440,662,Science Data Products
+Data Products,parad_n_auv_instrument,7,Science,1440,663,Science Data Products
+Data Products,parad_n_auv_instrument_recovered,7,Science,1440,664,Science Data Products
+Data Products,fdchp_a_instrument_recovered,7,Science,1440,665,Science Data Products
+Echosounder Data Products,auv_eng_auv_imagenex_852,7,Science,1440,666,Science Echosounder Data Products
+Echosounder Data Products,auv_eng_auv_imagenex_852_recovered,7,Science,1440,667,Science Echosounder Data Products
+,auv_eng_auv_digital_usbl,7,,1440,668,
+,auv_eng_auv_digital_usbl_recovered,7,,1440,669,
+,auv_eng_auv_tri_fin_motor,7,,1440,670,
+,auv_eng_auv_tri_fin_motor_recovered,7,,1440,671,
+,auv_eng_auv_emergency_board,7,,1440,672,
+,auv_eng_auv_emergency_board_recovered,7,,1440,673,
+,auv_eng_auv_oil_compensator,7,,1440,674,
+,auv_eng_auv_oil_compensator_recovered,7,,1440,675,
+,auv_eng_auv_smart_battery,7,,1440,676,
+,auv_eng_auv_smart_battery_recovered,7,,1440,677,
+,auv_eng_auv_digital_tx_board,7,,1440,678,
+,auv_eng_auv_digital_tx_board_recovered,7,,1440,679,
+,auv_eng_auv_fault_message,7,,1440,680,
+,auv_eng_auv_fault_message_recovered,7,,1440,681,
+,auv_eng_auv_state,7,,1440,682,
+,auv_eng_auv_state_recovered,7,,1440,683,
+Statistics Data Products (DCL),wavss_a_dcl_statistics,7,Science,20160,688,Science Statistics Data Products (DCL)
+Statistics Data Products (DCL),wavss_a_dcl_statistics_recovered,7,Science,20160,689,Science Statistics Data Products (DCL)
+,winch_cspp_eng,7,,1440,691,Engineering Winch Data
+Data Products,nutnr_n_auv_instrument,7,Science,1440,692,Science Data Products
+Data Products,nutnr_n_instrument_recovered,7,Science,1440,693,Science Data Products
+Data Products,nutnr_m_instrument_recovered,7,Science,1440,694,Science Data Products
+Data Products,nutnr_m_glider_instrument,7,Science,1440,695,Science Data Products
+,zplsc_c_instrument,7,,20160,696,Science Data Products
+Streaming Status,camhd_streaming_status,7,Engineering,1440,697,Engineering Streaming Status
+Data,camhd_adread_status,7,Engineering,1440,698,Engineering Data
+Hourly Averaged Data Products,metbk_hourly,3074,Science,1440,699,Science Hourly Averaged Data Products
+Data Products (DCL),ctdbp_cdef_dcl_instrument,7,Science,1440,700,Science Data Products (DCL)
+Data Products (DCL),ctdbp_cdef_dcl_instrument_recovered,7,Science,1440,701,Science Data Products (DCL)
+Data Products (DCL),dosta_abcdjm_ctdbp_dcl_instrument,7,Science,1440,702,Science Data Products (DCL)
+Data Products (DCL),dosta_abcdjm_ctdbp_dcl_instrument_recovered,7,Science,1440,703,Science Data Products (DCL)
+Instrument Data Products,ctdbp_cdef_instrument_recovered,7,Science,1440,704,Science Instrument Data Products
+Data Products,dosta_abcdjm_ctdbp_instrument_recovered,7,Science,1440,705,Science Data Products
+Data Products,flord_d_data_record,7,Science,1440,706,Science Data Products
+Status Data,flord_d_status,7,Engineering,1440,707,Engineering Status Data
+Dark Sample Data,nutnr_a_dark_sample,7,Science,20160,708,Science Dark Sample Data
+,deep_profiler_dock_eng_data,7,,1440,709,
+,deep_profiler_vehicle_eng_data,7,,1440,710,
+,secondary_node_lpjbox_eng_data,7,,1440,711,
+,secondary_node_port_eng_data,7,,1440,712,
+,secondary_node_eng_data,7,,1440,713,
+,shallow_profiler_winch_eng_data,7,,1440,714,
+,shore_station_power_feed_equipment_eng_data,7,,1440,715,
+,primary_node_eng_data,7,,1440,716,
+,primary_node_port_eng_data,7,,1440,717,
+,primary_node_out_of_band_port_data,7,,1440,718,
+,shore_station_otn_sea_side_port_data,7,,1440,719,
+,shore_station_force_10_network_port_data,7,,1440,720,
+,shore_station_time_server_eng_data,7,,1440,721,
+,shore_station_ups_status,7,,1440,722,
+,shore_station_ups_line_eng_data,7,,1440,723,
+Data Products (DCL),ctdbp_p_dcl_instrument,7,Science,1440,724,Science Data Products (DCL)
+Data Products (DCL),ctdbp_p_dcl_instrument_recovered,7,Science,1440,725,Science Data Products (DCL)
+Data Products (DCL),dosta_abcdjm_ctdbp_p_dcl_instrument,7,Science,1440,726,Science Data Products (DCL)
+Data Products (DCL),dosta_abcdjm_ctdbp_p_dcl_instrument_recovered,7,Science,1440,727,Science Data Products (DCL)
+Data Products (DCL),flord_g_ctdbp_p_dcl_instrument,7,Science,1440,728,Science Data Products (DCL)
+Data Products (DCL),flord_g_ctdbp_p_dcl_instrument_recovered,7,Science,1440,729,Science Data Products (DCL)
+Dark Sample Data,nutnr_b_dark_instrument_recovered,7,Engineering,1440,730,Engineering Dark Sample Data
+Concentration ASCII Dark Sample Data (DCL),nutnr_b_dcl_dark_conc_instrument,7,Science,1440,731,Science Concentration ASCII Dark Sample Data (DCL)
+Concentration ASCII Dark Sample Data (DCL),nutnr_b_dcl_dark_conc_instrument_recovered,7,Science,1440,732,Science Concentration ASCII Dark Sample Data (DCL)
+Full ASCII Dark Sample Data (DCL),nutnr_b_dcl_dark_full_instrument,7,Science,1440,733,Science Full ASCII Dark Sample Data (DCL)
+Full ASCII Dark Sample Data (DCL),nutnr_b_dcl_dark_full_instrument_recovered,7,Science,1440,734,Science Full ASCII Dark Sample Data (DCL)
+,shore_station_otn_shore_side_port_data,7,,1440,735,
+Antelope Metadata,antelope_metadata,7,Engineering,1440,736,Engineering Antelope Metadata
+Dark Sample Data,nutnr_j_cspp_dark_instrument,7,Science,1440,737,Science Dark Sample Data
+Dark Sample Data,nutnr_j_cspp_dark_instrument_recovered,7,Science,1440,738,Science Dark Sample Data
+Dark Sample Data,nutnr_n_dark_instrument_recovered,7,Science,1440,739,Science Dark Sample Data
+Dark Sample Data,nutnr_m_dark_instrument_recovered,7,Science,1440,740,Science Dark Sample Data
+,botpt_nano_sample_15s,3655,,1440,741,
+,botpt_nano_sample_24hr,3660,,1440,742,
+Beam Coordinate Data,adcp_velocity_beam,7,Science,720,743,Science Beam Coordinate Data
+Earth Coordinates Data,adcp_velocity_earth,7,Science,720,744,Science Earth Coordinates Data
+Instrument Data Products,adcp_velocity_inst,7,Science,720,745,Science Instrument Data Products
+Glider Velocity Data,adcp_velocity_glider,7,Science,720,746,Science Glider Velocity Data
+Data,adcp_engineering,7,Engineering,1440,747,Engineering Data
+Configuration Data,adcp_config,7,Engineering,20160,748,Engineering Configuration Data
+Bottom Track Data in Earth Coordinates,adcp_bottom_track_earth,7,Science,1440,749,Science Bottom Track Data in Earth Coordinates
+Bottom Track Data Products,adcp_bottom_track_inst,7,Science,1440,750,Science Bottom Track Data Products
+Bottom Track Configuration Data,adcp_bottom_track_config,7,Engineering,20160,751,Engineering Bottom Track Configuration Data
+Velocity Data Products,vadcp_velocity_beam,7,Science,720,752,Science Velocity Data Products
+Beam 5 Data Products,vadcp_velocity_beam_5,7,Science,720,753,Science Beam 5 Data Products
+Data - 5 Beam,adcp_engineering_5,7,Engineering,20160,754,Engineering Data - 5 Beam
+Configuration Data - 5 Beam,adcp_config_5,7,Engineering,20160,755,Engineering Configuration Data - 5 Beam
+Compass Data - 5 Beam,adcp_compass_calibration_5,7,Calibration,20160,756,Calibration Compass Data - 5 Beam
+System Configuration Data - 5 Beam,adcp_system_configuration_5,7,Engineering,20160,757,Engineering System Configuration Data - 5 Beam
+Ancillary System Data - 5 Beam,adcp_ancillary_system_data_5,7,Engineering,20160,758,Engineering Ancillary System Data - 5 Beam
+Transmit Path Data - 5 Beam,adcp_transmit_path_5,7,Engineering,20160,759,Engineering Transmit Path Data - 5 Beam
+Metadata,camhd_metadata,7,Engineering,1440,760,Engineering Metadata
+GPS Position Data,glider_gps_position,7,Engineering,1440,761,Engineering GPS Position Data
+Winch Motor Metadata,cspp_eng_dcl_modem,7,Engineering,1440,762,
+Winch Motor Metadata,cspp_eng_dcl_eng_data,7,Engineering,1440,763,
+Winch Motor Metadata,cspp_eng_dcl_summary,7,Engineering,1440,764,
+Winch Motor Metadata,cspp_eng_dcl_profile,7,Engineering,1440,765,
+Wave Burst Data Products (DCL),presf_abc_tide_measurement_recovered,7,Science,1440,766,
+Wave Burst Data Products (DCL),presf_abc_wave_burst_recovered,7,Science,1440,767,
+,camds_video,,,,9901,Science Video Data Products
+,iris,,,,9902,
+,ppsdn_status,,,,9903,
+,rasfl_status,,,,9904,

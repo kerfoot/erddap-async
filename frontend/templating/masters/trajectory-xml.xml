@@ -1,0 +1,18 @@
+
+        <!-- Trajectory DSG -->
+        <att name="cdm_data_type">Trajectory</att>
+        <att name="cdm_trajectory_variables">trajectory</att>
+        <att name="featureType">trajectory</att>
+
+    <!-- Add trajectory variable by taking the value from the global:source -->
+    <dataVariable>
+        <sourceName>global:source</sourceName>
+        <destinationName>trajectory</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="cf_role">trajectory_id</att>
+            <att name="ioos_category">Identifier</att>
+            <att name="comment">A trajectory is a single deployment of a wire following profiler</att>
+            <att name="long_name">Trajectory ID</att>
+        </addAttributes>
+    </dataVariable>
