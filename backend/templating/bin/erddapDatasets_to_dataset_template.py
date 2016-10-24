@@ -12,7 +12,8 @@ def main(args):
     '''Extract the <dataset /> element from the <erddapDatasets /> xml file and
     write the element to a .template.xml file in the same location as the source
     file. The obs dataVariable is removed and additional global attributes are
-    added to the XML.'''
+    added to the XML.  By default, the new xml files are written to the same
+    directory as they source files.'''
     
     # See if the OOI_ERDDAP_ASYNC_HOME/config/nc/attributes directory exists.
     # This directory may contain .txt files that should be added as global
@@ -49,12 +50,12 @@ def main(args):
         (xml_path, xml_fname) = os.path.split(xml_file)
         xml_dest = args.destination
         if not xml_dest:
-            xml_dest = xml_path
-        
+            xml_dest = os.path.realpath(xml_path)
+    
         if not os.path.isdir(xml_dest):
             sys.stderr.write('Invalid XML destination: {:s}\n'.format(xml_dest))
             continue
-        
+       
         # split the filename on '.'.  If there are 3 tokens and the 2nd element
         # is erddapDatasets, replace it with dataset
         xml_tokens = xml_fname.split('.')
