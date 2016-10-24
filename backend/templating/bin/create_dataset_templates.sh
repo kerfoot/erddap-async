@@ -8,52 +8,6 @@ app=$(basename $0);
 # Location of ERDDAP's GenerateDatasetsXml.sh
 xml_builder=/var/local/erddap/tomcat-12-2/webapps/erddap/WEB-INF/GenerateDatasetsXml.sh;
 
-# Usage message
-USAGE="
-NAME
-    $app - create the ERDDAP dataset xml template
-
-SYNOPSIS
-    $app [h] dir1[ dir2 ...]
-
-DESCRIPTION
-    Attempts to create the ERDDAP dataset xml template by examining each
-    specified directory for a erddapDatasets.args and erddapDatasets.xml file.
-    Templates are created using ERDDAP's GenerateDatasetsXml.sh, located:
-
-    $xml_builder
-
-    Specified directories should be absolute (not relative)
-
-    -h
-        show help message
-    -x
-        print configuration information
-";
-
-# Default values for options
-
-# Process options
-while getopts "hx" option
-do
-    case "$option" in
-        "h")
-            echo -e "$USAGE";
-            exit 0;
-            ;;
-        "x")
-            debug=1;
-            ;;
-        "?")
-            echo -e "$USAGE" >&2;
-            exit 1;
-            ;;
-    esac
-done
-
-# Remove option from $@
-shift $((OPTIND-1));
-
 # Validate environment
 if [ -z "$OOI_ERDDAP_ASYNC_HOME" ]
 then
@@ -87,6 +41,56 @@ then
     echo "Invalid XML destination : $xml_dest";
     exit 1;
 fi
+
+# Usage message
+USAGE="
+NAME
+    $app - create the ERDDAP dataset xml template
+
+SYNOPSIS
+    $app [h] dir1[ dir2 ...]
+
+DESCRIPTION
+    Attempts to create the ERDDAP dataset xml template by examining each
+    specified directory for a erddapDatasets.args and erddapDatasets.xml file.
+    Templates are created using ERDDAP's GenerateDatasetsXml.sh, located:
+
+    $xml_builder
+
+    Specified directories should be absolute (not relative).
+
+    Successfully created XML dataset templates are placed in:
+
+    $xml_production_dest
+
+    -h
+        show help message
+    -x
+        print configuration information
+";
+
+# Default values for options
+
+# Process options
+while getopts "hx" option
+do
+    case "$option" in
+        "h")
+            echo -e "$USAGE";
+            exit 0;
+            ;;
+        "x")
+            debug=1;
+            ;;
+        "?")
+            echo -e "$USAGE" >&2;
+            exit 1;
+            ;;
+    esac
+done
+
+# Remove option from $@
+shift $((OPTIND-1));
 
 if [ -n "$debug" ]
 then
