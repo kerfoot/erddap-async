@@ -215,7 +215,7 @@ if __name__ == '__main__':
     arg_parser = argparse.ArgumentParser(description=main.__doc__)
     arg_parser.add_argument('response_json_files',
         nargs='+',
-        help='A list of whitespace separated asynchronous UFrame request urls')
+        help='One or more JSON files containing a UFrame asynchronous request response')
     arg_parser.add_argument('-d', '--destination',
         help='Alternate template preparation destination directory')
     arg_parser.add_argument('-c', '--clobber',
@@ -228,3 +228,4 @@ if __name__ == '__main__':
     #sys.exit(13)
 
     sys.exit(main(parsed_args))
+
