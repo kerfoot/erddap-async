@@ -130,7 +130,7 @@ def create_dataset_xml(nc_dir, xml_template_file, dataset_id, title, summary, su
     if file_dir_att is None:
         sys.stderr.write('No <fileDir></> element found: {:s}\n'.format(xml_template_file))
         return
-    file_dir_att = nc_dir
+    file_dir_att.text = nc_dir
     
     # Select the <addAttributes></> element
     add_atts_e = root.find('addAttributes')
