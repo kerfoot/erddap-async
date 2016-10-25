@@ -90,10 +90,18 @@ def main(args):
         if dataset is None:
             sys.stderr.write('No <dataset /> element found: {:s}\n'.format(xml_file))
             continue
-            
+        
+        # Find the addAttributes element
+        add_attributes_e = dataset.find('addAttributes')
+
+        # Remove the subsetVariables attribute, if present
+        atts = add_attributes_e.getchildren()
+        att_names = [a.get('name') for a in atts]
+        if 'subsetVariables' in att_names:
+            add_attributes_e.remove(atts[att_names.index('subsetVariables')])
+
         # Add additional global attributes if there are files (att_txt_file)
         if new_global_attributes:
-            add_attributes_e = dataset.find('addAttributes')
             if add_attributes_e is not None:
                 for (k,v) in new_global_attributes.items():
                     g_att = Element('att', {'name' : k})
