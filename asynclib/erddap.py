@@ -9,7 +9,16 @@ from xml.etree import ElementTree
 
 _NC_TYPES = ['CF',
     'CFMA']
-    
+   
+# Node types (first 2 letters of node) that require trajectory DSG attributes and 
+# variables 
+_TRAJECTORY_NODE_TYPES = ['DP',
+    'GL',
+    'WF',
+    'PG',
+    'SP',
+    'SF']
+
 def fetch_erddap_datasets(erddap_url, dataset_id=None, full_listing=False):
     '''Fetch the allDatasets.json request at the specified erddap_url.  Returns
     a list of dicts containing individual datasets.  A datetime object is added
@@ -130,7 +139,7 @@ def create_dataset_xml(nc_dir, xml_template_file, dataset_id, title, summary, su
     if file_dir_att is None:
         sys.stderr.write('No <fileDir></> element found: {:s}\n'.format(xml_template_file))
         return
-    file_dir_att = nc_dir
+    file_dir_att.text = nc_dir
     
     # Select the <addAttributes></> element
     add_atts_e = root.find('addAttributes')
@@ -153,6 +162,47 @@ def create_dataset_xml(nc_dir, xml_template_file, dataset_id, title, summary, su
     if summary_append:
         summary = '{:s} {:s}'.format(atts[i].text, summary)
     atts[i].text = summary
+    
+    # Check the node type to see if we need to add trajectory DSG variables and attributes
+    node_type = dataset_id.split('-')[1][:2]
+    if node_type in _TRAJECTORY_NODE_TYPES:
+        sys.stdout.write('{:s}: Adding Trajectory DSG elements\n'.format(dataset_id))
+        
+        traj_elements_dir = os.path.join(os.getenv('OOI_ERDDAP_ASYNC_HOME'),
+            'config',
+            'nc',
+            'trajectory')
+        if not os.path.isdir(traj_elements_dir):
+            sys.stderr.write('Invalid trajectory elements directory: {:s}\n'.format(traj_elements_dir))
+            return ElementTree.tostring(root)
+        
+        traj_atts_xml = os.path.join(traj_elements_dir, 'trajectory.atts.xml')
+        if not os.path.isfile(traj_atts_xml):
+            sys.stderr.write('Invalid trajectory attributes elements file: {:s}\n'.format(traj_atts_xml))
+            return ElementTree.tostring(root)
+        
+        traj_var_xml = os.path.join(traj_elements_dir, 'trajectory.vars.xml')
+        if not os.path.isfile(traj_var_xml):
+            sys.stderr.write('Invalid trajectory variable element file: {:s}\n'.format(traj_var_xml))
+            return ElementTree.tostring(root)
+            
+        traj_vars_doc = ElementTree.parse(traj_var_xml)
+        traj_vars_root = traj_vars_doc.getroot()
+        if traj_vars_root.tag != 'dataset':
+            sys.stderr.write('{:s}: root tag must be a dataset element\n'.format(traj_var_xml))
+            return ElementTree.tostring(root)
+            
+        traj_atts_doc = ElementTree.parse(traj_atts_xml)
+        traj_root = traj_atts_doc.getroot()
+        traj_atts = traj_root.findall('att')
+        for traj_att in traj_atts:
+            add_atts_e.append(traj_att)
+            
+        traj_var = traj_vars_root.find('dataVariable')
+        source_name_e = traj_var.find('sourceName')
+        source_name_e.text = '={:s}'.format(root.get('datasetID'))
+        root.append(traj_var)
+
     
     # Return the string XML
     return ElementTree.tostring(root)
