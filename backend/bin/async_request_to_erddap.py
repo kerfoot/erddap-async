@@ -138,10 +138,11 @@ def main(args):
             continue
         try:
             with open(status_file, 'r') as fid:
-                status = fid.readline()
+                status = fid.readline().strip()
         except IOError as e:
             sys.stderr.write('{:s}\n'.format(e))
             continue
+
         if status != 'complete':
             sys.stdout.write('Production creation incomplete: {:s}\n'.format(status_file))
             continue
