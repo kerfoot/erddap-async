@@ -1,1 +1,1 @@
-EDDTableFromNcCFFiles {source_dir} .*\.nc {netcdf_filename} obs default nothing nothing nothing nothing time "" http://oceanobservatories.org OOI nothing nothing
+EDDTableFromNcCFFiles {source_dir} .*\.nc {netcdf_filename} obs default nothing nothing nothing nothing time "" nothing nothing nothing nothing
