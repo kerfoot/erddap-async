@@ -8,8 +8,8 @@ from UFrame import UFrame
 from asynclib.templating import get_valid_dataset_template
 
 def main(args):
-    '''Create the request urls for all deployment objects contained in the specified
-    JSON files.'''
+    '''Create and send the request urls for all deployment objects contained in 
+    the specified deployment JSON files.'''
     
     status = 0
    
@@ -95,9 +95,9 @@ def main(args):
                 time_check=args.time_check,
                 exec_dpa=args.no_dpa,
                 application_type='netcdf',
-                provenance=args.no_provenance,
+                provenance=args.provenance,
                 limit=-1,
-                annotations=args.no_annotations,
+                #annotations=args.annotations,
                 user=user,
                 email=args.email,
                 selogging=args.selogging)
@@ -126,7 +126,6 @@ def main(args):
         
         # Otherwise, send the requests, add the response to the request object and
         # write the object to a file so that we can use it to move files later
-        sys.stdout.write('Sending valid asynchronous data requests...\n')
         for data_request in data_requests:
     
             deployment_request = '{:s}-{:s}-{:s}-deployment{:04.0f}'.format(
@@ -149,8 +148,8 @@ def main(args):
                 uframe = UFrame(base_url=deployment['request_params']['uframe_url'])
             
             # send the data request
-            sys.stdout.write('Sending deployment request: {:s}...\n'.format(deployment_request));
-    
+            sys.stdout.write('Sending deployment request: {:s}...\n'.format(deployment_request))
+            
             get_response = uframe.send_async_requests(data_request['request_url'])
             if not get_response:
                 sys.stderr.write('{:s}: Error sending request\n'.format(data_request['request_url']))
@@ -173,7 +172,7 @@ if __name__ == '__main__':
 
     arg_parser = argparse.ArgumentParser(description=main.__doc__)
     arg_parser.add_argument('deployment_json_files',
-        nargs='*',
+        nargs='+',
         help='One or more catalog deployment JSON catalog files')
     arg_parser.add_argument('-d', '--destination',
         dest='destination',
@@ -198,12 +197,10 @@ if __name__ == '__main__':
         help='Add a user name to the query')
     arg_parser.add_argument('--no_dpa',
         action='store_false',
-        default=True,
-        help='Execute all data product algorithms to return L1/L2 parameters <Default:False>')
-    arg_parser.add_argument('--no_provenance',
-        action='store_false',
-        default=True,
-        help='Include provenance information in the data sets <Default:False>')
+        help='Prevent the execution of all data product algorithms to return L1/L2 parameters')
+    arg_parser.add_argument('--provenance',
+        action='store_true',
+        help='Prevent the inclusion of provenance information in the data sets')
     arg_parser.add_argument('--no_time_check',
         dest='time_check',
         default=True,
@@ -216,10 +213,9 @@ if __name__ == '__main__':
     arg_parser.add_argument('--selogging',
         action='store_true',
         help='Include advanced stream engine logging')
-    arg_parser.add_argument('--no_annotations',
-        action='store_false',
-        default=False,
-        help='Include all annotations in the data sets <Default>:False')
+    #arg_parser.add_argument('--annotations',
+    #    action='store_true',
+    #    help='Prevent the inclusion of annotations in the data sets')
 
     parsed_args = arg_parser.parse_args()
     
