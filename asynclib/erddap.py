@@ -53,7 +53,7 @@ def fetch_erddap_datasets(erddap_url, dataset_id=None, full_listing=False):
         return datasets
     
     # Regex to extract the deployment number
-    deployment_regex = re.compile('deployment(\d{4,})')
+    deployment_regex = re.compile('d(\d{4,})$')
     
     col_count = range(len(response['table']['columnNames']))   
     # Create a list of dicts containing each dataset
@@ -79,8 +79,8 @@ def fetch_erddap_datasets(erddap_url, dataset_id=None, full_listing=False):
             'subsite' : id_tokens[0],
             'node' : id_tokens[1],
             'instrument' : '{:s}-{:s}'.format(id_tokens[2], id_tokens[3]),
-            'method' : id_tokens[4],
-            'stream' : id_tokens[5],
+            'method' : id_tokens[5],
+            'stream' : id_tokens[4],
             'deployment_number' : int(deployment_match.groups()[0])}
         dataset['instrument'] = instrument
         
@@ -206,7 +206,44 @@ def create_dataset_xml(nc_dir, xml_template_file, dataset_id, title, summary, su
     
     # Return the string XML
     return ElementTree.tostring(root)
+
+def create_frontend_dataset_xml(nc_dir, xml_template_file, dataset_id):
+    
+    # Validate input args
+    if not os.path.isdir(nc_dir):
+        sys.stderr.write('Invalid NetCDF directory: {:s}\n'.format(nc_dir))
+        return
+    if not os.path.isfile(xml_template_file):
+        sys.stderr.write('Invalid dataset XML file: {:s}\n'.format(xml_template_file))
+        return
         
+    # Parse the xml template file
+    doc = ElementTree.parse(xml_template_file)
+    
+    root = doc.getroot()
+    # The root element must be 'dataset'
+    if root.tag != 'dataset':
+        sys.stderr.write('Invalid dataset XML template file (Root element must be of type=dataset): {:s}\n'.format(xml_template_file))
+        return
+        
+    # 1. Create and set the <dataset datasetID=...> attribute
+    if 'datasetID' not in root.keys():
+        sys.stderr.write('dataset element is missing the datasetID attribute: {:s}\n'.format(xml_template_file))
+        return
+        
+    # Set the attribute
+    root.set('datasetID', dataset_id)
+    
+    # 2. Set the <fileDir> attribute to nc_dir
+    file_dir_att = root.find('fileDir')
+    if file_dir_att is None:
+        sys.stderr.write('No <fileDir></> element found: {:s}\n'.format(xml_template_file))
+        return
+    file_dir_att.text = nc_dir
+    
+    # Return the string XML
+    return ElementTree.tostring(root)
+            
 #def create_dataset_xml(reference_designator, stream, telemetry, deployment_number, nc_dir, xml_template_file, instrument_descriptions):
 #    
 #    # Validate input args
@@ -493,7 +530,7 @@ def download_erddap_nc(erddap_base_url, dataset_id, output_filename=None, clobbe
     # Send the download request        
     r = requests.get(request_url, stream=True)
     if r.status_code != 200:
-        sys.stderr.write('Download failed: {:s}\n'.format(r.reason))
+        sys.stderr.write('Download failed: {:s} (Reason={:s})\n'.format(request_url, r.reason))
         return
     
     # Chunk the response and write the NetCDF file
