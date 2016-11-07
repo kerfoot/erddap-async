@@ -19,7 +19,7 @@ app=$(basename $0);
 # Usage message
 USAGE="
 NAME
-    $app - 
+    $app - Test frontend ERDDAP template creation
 
 SYNOPSIS
     $app [h]
@@ -27,6 +27,8 @@ SYNOPSIS
 DESCRIPTION
     -h
         show help message
+    -d 
+        Alternate location to write datasets.xml file <Default=pwd>
 ";
 
 # Default values for options
@@ -91,7 +93,7 @@ do
 
     template_name=$(basename $nc .nc);
 
-    template_file="${templates_dir}/${template_name}.template.dataset.xml";
+    template_file="${templates_dir}/${template_name}.dataset.template.xml";
     if [ ! -f "$template_file" ]
     then
         echo "Template does not exist: $template_file";
@@ -103,9 +105,12 @@ do
 
     echo "Writing: $output_xml_file";
 
+#    sed "s|{dataset_id}|${template_name}|" $template_file | \
+#        sed "s|{file_dir}|${nc_path}|" | \
+#        sed "s|{summary}|$template_name|" | \
+#        sed "s|{title}|$template_name|" > $output_xml_file;
+
     sed "s|{dataset_id}|${template_name}|" $template_file | \
-        sed "s|{file_dir}|${nc_path}|" | \
-        sed "s|{summary}|$template_name|" | \
-        sed "s|{title}|$template_name|" > $output_xml_file;
+        sed "s|{file_dir}|${nc_path}|" > $output_xml_file;
 
 done
