@@ -1,0 +1,14 @@
+<dataset>
+    <dataVariable>
+        <sourceName>global:source</sourceName>
+        <destinationName>trajectory</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="cf_role">trajectory_id</att>
+            <att name="ioos_category">Identifier</att>
+            <att name="comment">A trajectory is a single deployment of the node</att>
+            <att name="long_name">Trajectory ID</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
