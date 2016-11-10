@@ -6,8 +6,6 @@ import argparse
 import glob
 from xml.etree.ElementTree import parse, Element, ElementTree
 
-xml_file = '/Users/kerfoot/code/erddap-admin/templating/xml/alpha/ctdgv_m_glider_instrument-telemetered.template.xml'
-
 def main(args):
     '''Extract the <dataset /> element from the <erddapDatasets /> xml file and
     write the element to a .template.xml file in the same location as the source
@@ -15,35 +13,36 @@ def main(args):
     added to the XML.  By default, the new xml files are written to the same
     directory as they source files.'''
     
-    # See if the OOI_ERDDAP_ASYNC_HOME/config/nc/attributes directory exists.
-    # This directory may contain .txt files that should be added as global
-    # attributes to the dataset XML template files
     new_global_attributes = {}
     async_home = os.getenv('OOI_ERDDAP_ASYNC_HOME')
     if not os.path.isdir(async_home):
-        sys.stderr.write('OOI_ERDDAP_ASYNC_HOME is not set: No additional global attributes will be added\n')
+        sys.stderr.write('OOI_ERDDAP_ASYNC_HOME is not set\n')
+        return 1
+    
+    # See if the OOI_ERDDAP_ASYNC_HOME/config/nc/attributes directory exists.
+    # This directory may contain .att files names for the global attribute that 
+    # should be added or removed from the dataset XML template files
+    nc_atts_dir = os.path.join(async_home,
+        'config',
+        'nc',
+        'attributes')
+    if not os.path.isdir(nc_atts_dir):
+        sys.stderr.write('NetCDF add global attributes directory does not exist: {:s}\n'.format(nc_atts_dir))
+        sys.stderr.write('No additional global attributes will be added\n')
     else:
-        nc_atts_dir = os.path.join(async_home,
-            'config',
-            'nc',
-            'attributes')
-        if not os.path.isdir(nc_atts_dir):
-            sys.stderr.write('NetCDF additional global attributes directory does not exist: {:s}\n'.format(nc_atts_dir))
-            sys.stderr.write('No additional global attributes will be added\n')
-        else:
-            # Search for additional global attributes files
-            att_txt_files = glob.glob(os.path.join(nc_atts_dir, '*.txt'))
-            for f in att_txt_files:
-                try:
-                    with open(f, 'r') as fid:
-                        att_text = fid.read()
-                        if not att_text:
-                            att_text = 'null'
-                        (fp, fn) = os.path.split(f)
-                        (k,ext) = os.path.splitext(fn)
-                        new_global_attributes[k] = att_text
-                except IOError as e:
-                    sys.stderr.write('{:s}\n'.format(e))
+        # Search for additional global attributes files
+        att_txt_files = glob.glob(os.path.join(nc_atts_dir, '*.att'))
+        for f in att_txt_files:
+            try:
+                with open(f, 'r') as fid:
+                    att_text = fid.read()
+                    if not att_text:
+                        att_text = 'null'
+                    (fp, fn) = os.path.split(f)
+                    (k,ext) = os.path.splitext(fn)
+                    new_global_attributes[k] = att_text
+            except IOError as e:
+                sys.stderr.write('{:s}\n'.format(e))
             
     for xml_file in args.erddap_datasets_xml_files:
     
@@ -93,17 +92,20 @@ def main(args):
         
         # Find the addAttributes element
         add_attributes_e = dataset.find('addAttributes')
+        if add_attributes_e is None:
+            sys.stderr.write('<dataset /> does not contain an <addAttributes /> element\n')
 
-        # Remove the subsetVariables attribute, if present
-        atts = add_attributes_e.getchildren()
-        att_names = [a.get('name') for a in atts]
-        if 'subsetVariables' in att_names:
-            add_attributes_e.remove(atts[att_names.index('subsetVariables')])
+        # Get the list of attributes
+        global_atts = add_attributes_e.getchildren()
+        global_att_names = [a.get('name') for a in global_atts]
 
-        # Add additional global attributes if there are files (att_txt_file)
-        if new_global_attributes:
-            if add_attributes_e is not None:
-                for (k,v) in new_global_attributes.items():
+        # Add additional global attributes or remove existing global attributes
+        # if there are files (att_txt_file)
+        if new_global_attributes and add_attributes_e is not None:
+            for (k,v) in new_global_attributes.items():
+                if k in global_att_names:
+                    add_attributes_e.remove(global_atts[global_att_names.index(k)])
+                else:
                     g_att = Element('att', {'name' : k})
                     g_att.text = v
                     add_attributes_e.append(g_att)
