@@ -11,7 +11,7 @@ def main(args):
     in the default UFrame instance.  The default UFrame instance is taken from the 
     UFRAME_BASE_URL environment, if set.  Active deployments are queried from the UFrame 
     asset management API.  The resulting JSON catalogs are written the the current
-    working directory.'''
+    working directory, one file for each subsite.'''
     
     dest_dir = args.destination
     # Use the current working directory if no alternate destination was specified
