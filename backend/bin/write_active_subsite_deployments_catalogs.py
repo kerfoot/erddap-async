@@ -47,7 +47,7 @@ def main(args):
     master_catalog_file = os.path.join(dest_dir, 'subsites-active-catalog.json')
     try:
         with open(master_catalog_file, 'w') as fid:
-            sys.stdout.write('Writing master catalog: {:s}\n'.format(master_catalog_file))
+            sys.stdout.write('Writing master catalog : {:s}\n'.format(master_catalog_file))
             json.dump(deployments, fid)
     except IOError as e:
         sys.stderr.write('{:s}\n'.format(e))
@@ -68,7 +68,7 @@ def main(args):
         try:
             with open(catalog_file, 'w') as fid:
                 json.dump(subsite_deployments, fid)   
-                sys.stdout.write('{:s}\n'.format(catalog_file)) 
+                sys.stdout.write('Writing subsite catalog: {:s}\n'.format(catalog_file)) 
         except IOError as e:
             sys.stderr.write('{:s}\n'.format(e))
             return 1
