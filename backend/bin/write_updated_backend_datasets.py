@@ -40,6 +40,8 @@ def main(args):
     if not erddap_base_url.startswith('http'):
         sys.stderr.write('ERDDAP base url must start with \'http\'\n')
         return 1
+
+    sys.stdout.write('ERDDAP base url: {:s}\n'.format(erddap_base_url))
         
     # If the user did not specify the location of the subsites csv cable type file,
     # try to find it using the OOI_ERDDAP_ASYNC_HOME environment variable
@@ -238,7 +240,7 @@ def main(args):
             
             
         if not new_datasets:
-            sys.stdout.write('{:s}: No updates needed\n'.format(dataset_id))
+            sys.stdout.write('{:s}: No updates needed\n'.format(deployment_json_file))
             continue
         
         # Write the resulting datasets that need creating to file    
