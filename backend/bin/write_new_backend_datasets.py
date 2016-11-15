@@ -9,8 +9,11 @@ from asynclib.util import csv2json
 from asynclib.erddap import create_dataset_xml_filename#, create_erddap_dataset_id
 
 def main(args):
-    '''Compare one or more deployment_json_files with the existing datasets on an
-    ERDDAP server to determine if any new datasets need to be created.'''
+    '''Compare one or more subsite instrument deployment catalogs with the existing 
+    datasets on an ERDDAP server to determine if any new datasets need to be created.
+    New instrument deployment JSON objects are written to the default datasets-new
+    directory.
+    '''
     
     # We must have OOI_ERDDAP_DATA_HOME defined
     async_data_home = os.getenv('OOI_ERDDAP_DATA_HOME')
@@ -53,24 +56,24 @@ def main(args):
     if not subsites:
         return 1
         
-    for deployment_json_file in args.deployment_json_files:
+    for subsite_deployments_json_catalog in args.subsite_deployments_json_catalogs:
         
-        # Read in the specified deployment_json_file for deployed instruments
+        # Read in the specified subsite_deployments_json_catalog for deployed instruments
         try:
-            with open(deployment_json_file, 'r') as fid:
+            with open(subsite_deployments_json_catalog, 'r') as fid:
                 deployments = json.load(fid)
         except (IOError, ValueError) as e:
             sys.stderr.write('{:s}\n'.format(e))
             return 1
                 
         if type(deployments) != list:
-            sys.stderr.write('{:s}: Deployment json file does not contain a top level list\n'.format(deployment_json_file))
+            sys.stderr.write('{:s}: Deployment json file does not contain a top level list\n'.format(subsite_deployments_json_catalog))
             return 1
         elif not deployments:
-            sys.stderr.write('{:s}: Deployment json file contains no deployments\n'.format(deployment_json_file))
+            sys.stderr.write('{:s}: Deployment json file contains no deployments\n'.format(subsite_deployments_json_catalog))
             return 1
             
-        catalog_file = os.path.basename(deployment_json_file)   
+        catalog_file = os.path.basename(subsite_deployments_json_catalog)   
         (fname, ext) = os.path.splitext(catalog_file)
         # Write the resulting datasets that need creating to file
         new_datasets_catalog = os.path.join(dest_dir, '{:s}.new.json'.format(fname))
@@ -175,9 +178,9 @@ def main(args):
 if __name__ == '__main__':
 
     arg_parser = argparse.ArgumentParser(description=main.__doc__)
-    arg_parser.add_argument('deployment_json_files',
+    arg_parser.add_argument('subsite_deployments_json_catalogs',
         nargs='+',
-        help='Instrument deployment JSON catalog file')
+        help='Subsite instrument deployment JSON catalog file')
     arg_parser.add_argument('-d', '--destination',
         dest='destination',
         help='Specify the location for the catalog file(s), which must exist')
