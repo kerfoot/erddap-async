@@ -200,7 +200,7 @@ if __name__ == '__main__':
         help='Prevent the execution of all data product algorithms to return L1/L2 parameters')
     arg_parser.add_argument('--provenance',
         action='store_true',
-        help='Prevent the inclusion of provenance information in the data sets')
+        help='Include source file  provenance information in the data sets')
     arg_parser.add_argument('--no_time_check',
         dest='time_check',
         default=True,
