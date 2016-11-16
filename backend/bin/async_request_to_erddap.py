@@ -326,7 +326,7 @@ def main(args):
             instrument_meta = instrument_descriptions[instruments.index(response['deployment']['instrument']['reference_designator'])]
     
             # Create the dataset title
-            dataset_title = '{:s} {:s} {:s} {:s} data ({:s}) - Deployment {:04.0f} ({:s})'.format(instrument_meta['site'],
+            dataset_title = '{:s} {:s} {:s} {:s} {:s} - Deployment {:04.0f} ({:s})'.format(instrument_meta['site'],
                 instrument_meta['subsite'],
                 instrument_meta['node'],
                 instrument_meta['name'],
