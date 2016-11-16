@@ -3,6 +3,7 @@ import sys
 import requests
 import re
 from dateutil import parser
+from dateutil.relativedelta import relativedelta as tdelta
 import string
 import random
 from xml.etree import ElementTree
@@ -18,6 +19,14 @@ _TRAJECTORY_NODE_TYPES = ['DP',
     'PG',
     'SP',
     'SF']
+    
+_VALID_RELATIVE_TIMEDELTA_TYPES = ('years',
+    'months',
+    'weeks',
+    'days',
+    'hours',
+    'minutes',
+    'seconds')
 
 def fetch_erddap_datasets(erddap_url, dataset_id=None, full_listing=False):
     '''Fetch the allDatasets.json request at the specified erddap_url.  Returns
@@ -457,7 +466,7 @@ def get_updated_erddap_datasets(erddap_datasets1, erddap_datasets2, delta_second
             
     return updated_datasets
     
-def download_erddap_nc(erddap_base_url, dataset_id, output_filename=None, clobber=None, nc_type=None, start_time=None, end_time=None):
+def download_erddap_nc(erddap_url, dataset_id, output_filename=None, nc_type=None, time_delta_type=None, time_delta_value=None, start_time=None, end_time=None, clobber=None, print_url=False):
     '''Download a flat, table-like, NetCDF-3 binary file for the specified datasetID,
     with COARDS/CF/ACDD metadata from the specified erddap_base_url.  The entire time 
     series is downloaded by default. 
@@ -473,8 +482,11 @@ def download_erddap_nc(erddap_base_url, dataset_id, output_filename=None, clobbe
         clobber: set to True to overwrite the file if it already exists <default=False>.
         nc_type: 'CF' or 'CFMA'.  See ERDDAP doco for the differences between the optional
             types.
+        time_delta_type: Type for calculating the subset start time, i.e.: years, months, weeks, days.  Must be a type kwarg accepted by dateutil.relativedelta'
+        time_delta_value: Positive integer value to subtract from the end time to get the start time for subsetting.
         start_time: string specifying the start of the time-series to download
         end_time: string specifying the end of the time-series to download
+        print_url: set to True to print the request URL, but do not send the request.
     '''
     
     # Check the nc_type if specified
@@ -482,36 +494,93 @@ def download_erddap_nc(erddap_base_url, dataset_id, output_filename=None, clobbe
         sys.stderr.write('Invalid nc_type parameter: {:s}\n'.format(nc_type))
         return
     
+    # Fetch the ERDDAP dataset metadata to make sure the dataset exists
+    dataset = fetch_erddap_datasets(erddap_url, dataset_id=dataset_id)
+    if not dataset:
+        sys.stderr.write('Invalid ERDDAP dataset (datasetID={:s})\n'.format(dataset_id))
+        return
+    dataset = dataset[0]
+    
     # Create the request url base    
-    request_url = '{:s}/{:s}.nc'.format(erddap_base_url.strip('/'),
+    request_url = '{:s}/{:s}.nc'.format(erddap_url.strip('/'),
         dataset_id)
     
     # Add the optional nc_type, if specified and valid    
     if nc_type:
         request_url = '{:s}{:s}'.format(request_url, nc_type)
     
-    # Try to parse the start_time and/or end_time parameters to subset the request
-    time_params = ''
-    if start_time:
-        try:
-            dt0 = parser.parse(start_time)
-            time_params = '{:s}&time>={:s}'.format(time_params,
-                dt0.strftime('%Y-%m-%dT%H:%M:%SZ'))
-        except ValueError as e:
-            sys.stderr.write('Start time parse errror ({:s}): {:s}\n'.format(e, start_time))
+    # The user can use request a file by either using the time_delta_type and time_delta_value
+    # kwargs or specifying a begin_ts and/or end_ts date string.  
+    if time_delta_type and not time_delta_value:
+        sys.stderr.write('time_delta_type kwarg specified but time_delta_value kwarg is not set\n')
+        return
+    elif time_delta_value and not time_delta_type:
+        sys.stderr.write('time_delta_value kwarg specified but time_delta_type kwarg is not set\n')
+        return
+    elif time_delta_type and time_delta_value:
+        if time_delta_type not in _VALID_RELATIVE_TIMEDELTA_TYPES:
+            sys.stderr.write('Invalid time_delta_type: {:s}\n'.format(time_delta_type))
             return
-            
-    if end_time:
+        
+        # Parse the dataset['maxTime'] to datetime
         try:
-            dt1 = parser.parse(end_time)
-            time_params = '{:s}&time<={:s}'.format(time_params,
-                dt1.strftime('%Y-%m-%dT%H:%M:%SZ'))
+            end_dt = parser.parse(dataset['maxTime'])
+            start_dt = end_dt - tdelta(**dict({time_delta_type : time_delta_value}))
         except ValueError as e:
-            sys.stderr.write('Start time parse errror ({:s}): {:s}\n'.format(e, start_time))
+            sys.stderr.write('Time Delta Error: {:s}\n'.format(e))
             return
-            
-    if time_params:
-        request_url = '{:s}?{:s}'.format(request_url, time_params)
+    else: 
+        # If we don't have a end_dt and start_dt, look to see if the user specified
+        # a begin_ts and/or end_ts
+        if end_time:
+            # Add Z to the end_time to ensure that it's parsed as a utc time
+            if not end_time.endswith('Z'):
+                end_time = '{:s}Z'.format(end_time)
+                
+            try:
+                end_dt = parser.parse(end_time)
+            except ValueError as e:
+                sys.stderr.write('end_time parse error: {:s}\n'.format(e))
+                return
+        else:
+            try:
+                end_dt = parser.parse(dataset['maxTime'])
+            except ValueError as e:
+                sys.stderr.write('end_time parse error: {:s}\n'.format(e))
+                return
+                
+        if start_time:
+            # Add Z to the end_time to ensure that it's parsed as a utc time
+            if not start_time.endswith('Z'):
+                start_time = '{:s}Z'.format(start_time)
+                
+            try:
+                start_dt = parser.parse(start_time)
+            except ValueError as e:
+                sys.stderr.write('start_time parse error: {:s}\n'.format(e))
+                return
+        else:
+            try:
+                start_dt = parser.parse(dataset['minTime'])
+            except ValueError as e:
+                sys.stderr.write('start_time parse error: {:s}\n'.format(e))
+                return
+                
+    # Make sure the end_dt occurs after the start_dt
+    if end_dt <= start_dt:
+        sys.stderr.write('Requested end time occurs before the requested start time')
+        return
+                
+    # We should have a start_dt and end_dt to add to the query, regardless of whether
+    # the user specified time_delta* or start_time/end_time
+    time_params = 'time>={:s}&time<={:s}'.format(start_dt.strftime('%Y-%m-%dT%H:%M:%SZ'),
+        end_dt.strftime('%Y-%m-%dT%H:%M:%SZ'))
+        
+    request_url = '{:s}?&{:s}'.format(request_url, time_params)
+    
+    if print_url:
+        sys.stderr.write('{:s}\n'.format(request_url))
+        return
             
     # Create a random filename if none was specified
     if not output_filename:
@@ -546,6 +615,6 @@ def download_erddap_nc(erddap_base_url, dataset_id, output_filename=None, clobbe
             
     return output_filename
             
-def id_generator(size=32, chars=string.ascii_uppercase + string.digits):
+def id_generator(size=16, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
     
