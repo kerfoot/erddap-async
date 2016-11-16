@@ -40,6 +40,10 @@ elif [ ! -d "$xml_dest" ]
 then
     echo "Invalid XML destination : $xml_dest";
     exit 1;
+elif [ ! -d "$xml_production_dest" ]
+then
+    echo "Invalid XML production dest: $xml_production_dest" >&2;
+    exit 1;
 fi
 
 # Usage message
@@ -94,9 +98,10 @@ shift $((OPTIND-1));
 
 if [ -n "$debug" ]
 then
-    echo "Logs destination: $log_dest";
-    echo "XML destination : $xml_dest";
-    echo "XML builder     : $xml_builder";
+    echo "Logs destination    : $log_dest";
+    echo "XML orig destination: $xml_dest";
+    echo "XML production dest : $xml_production_dest";
+    echo "XML builder         : $xml_builder";
 fi
 
 # one or more directories must be specified
