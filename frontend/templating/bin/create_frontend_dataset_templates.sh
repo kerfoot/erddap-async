@@ -61,7 +61,7 @@ DESCRIPTION
 
     $xml_builder
 
-    Specified directories should be absolute (not relative).
+    Specified directories MUST be absolute (not relative).
 
     Successfully created XML dataset templates are placed in:
 
