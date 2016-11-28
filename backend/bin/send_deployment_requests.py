@@ -22,7 +22,7 @@ def main(args):
     if args.user:
         user = args.user
     else:
-        user = os.getenv('OOI_ERDDAP_USER')
+        user = os.getenv('UFRAME_USER')
     if not user:
         sys.stderr.write('No user specified and OOI_ERDDAP_USER environment variable not set\n')
         return 1
