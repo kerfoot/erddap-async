@@ -5,6 +5,12 @@ PATH=${PATH}:/bin;
 
 app=$(basename $0);
 
+if [ ! -d "$OOI_ERDDAP_ASYNC_HOME" ]
+then
+    echo '$OOI_ERDDAP_ASYNC_HOME not set' >&2;
+    exit 1;
+fi
+
 data_home=$OOI_ERDDAP_DATA_HOME;
 if [ ! -d "$data_home" ]
 then
@@ -76,8 +82,8 @@ then
 fi
 
 # Files of interest
-erddap_head_xml="${stream_xml_dir}/erddap.datasets.head.xml";
-erddap_tail_xml="${stream_xml_dir}/erddap.datasets.tail.xml";
+erddap_head_xml="${OOI_ERDDAP_ASYNC_HOME}/frontend/templating/masters/erddap-datasets.head.xml";
+erddap_tail_xml="${OOI_ERDDAP_ASYNC_HOME}/frontend/templating/masters/erddap-datasets.tail.xml";
 stream_xml_files=$(find $stream_xml_dir -maxdepth 1 -type f -name '*dataset.xml' | sort);
 
 if [ ! -f "$datasets_xml_file" ]
