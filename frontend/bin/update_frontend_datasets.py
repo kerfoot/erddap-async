@@ -116,9 +116,9 @@ def main(args):
             # Create the ERDDAP product directory if it does not exist
             sys.stdout.write('ERDDAP destination: {:s}\n'.format(dest_nc_dir))
             if not os.path.isdir(dest_nc_dir):
-                sys.stdout.write('Creating ERDDAP destination directory\n')
                 if not args.debug:
                     try:
+                        sys.stdout.write('Creating ERDDAP destination directory\n')
                         os.makedirs(dest_nc_dir)
                     except OSError as e:
                         sys.stderr.write('{:s}\n'.format(e))
@@ -201,9 +201,9 @@ def main(args):
             # Create the ERDDAP product directory if it does not exist
             sys.stdout.write('ERDDAP destination: {:s}\n'.format(dest_nc_dir))
             if not os.path.isdir(dest_nc_dir):
-                sys.stdout.write('Creating ERDDAP destination directory\n')
                 if not args.debug:
                     try:
+                        sys.stdout.write('Creating ERDDAP destination directory\n')
                         os.makedirs(dest_nc_dir)
                     except OSError as e:
                         sys.stderr.write('{:s}\n'.format(e))
@@ -237,10 +237,10 @@ def main(args):
                         except OSError as e:
                             sys.stderr.write('{:s}\n'.format(e))
                             
-            # convert the .ncCF-3.nc.tmp file to NetCDF 4 using ncks
-            nc4_file = '{:s}.ncCF-4.nc'.format(downloaded_nc_file.split('.')[0])
             if not args.debug:
                 try:
+                    # convert the .ncCF-3.nc.tmp file to NetCDF 4 using ncks
+                    nc4_file = '{:s}.ncCF-4.nc'.format(downloaded_nc_file.split('.')[0])
                     sys.stdout.write('Converting to NetCDF-4 and compressing: {:s}\n'.format(nc4_file))
                     check_output(['ncks', '-4', '-L 1', downloaded_nc_file, nc4_file])
                     os.unlink(downloaded_nc_file)
