@@ -5,11 +5,17 @@ PATH=${PATH}:/bin;
 
 app=$(basename $0);
 
+if [ ! -d "$OOI_ERDDAP_ASYNC_HOME" ]
+then
+    echo '$OOI_ERDDAP_ASYNC_HOME not set' >&2;
+    exit 1;
+fi
+
 data_home=$OOI_ERDDAP_DATA_HOME;
 if [ ! -d "$data_home" ]
 then
     echo '$OOI_ERDDAP_DATA_HOME not set' >&2;
-    return 1;
+    exit 1;
 fi
 # Location of the individual stream.xml files
 stream_xml_dir="${OOI_ERDDAP_DATA_HOME}/erddap-12-1/stream-xml";
@@ -76,8 +82,8 @@ then
 fi
 
 # Files of interest
-erddap_head_xml="${stream_xml_dir}/erddap.datasets.head.xml";
-erddap_tail_xml="${stream_xml_dir}/erddap.datasets.tail.xml";
+erddap_head_xml="${OOI_ERDDAP_ASYNC_HOME}/frontend/templating/masters/erddap-datasets.head.xml";
+erddap_tail_xml="${OOI_ERDDAP_ASYNC_HOME}/frontend/templating/masters/erddap-datasets.tail.xml";
 stream_xml_files=$(find $stream_xml_dir -maxdepth 1 -type f -name '*dataset.xml' | sort);
 
 if [ ! -f "$datasets_xml_file" ]
@@ -112,7 +118,7 @@ fi
 if [ "$?" -ne 0 ]
 then
     rm $tmp_datasets_xml_file;
-    return 1;
+    exit 1;
 fi
 # cat each $xml file in $stream_xml_files to the temporary datasets xml file
 for xml_file in $stream_xml_files
@@ -127,7 +133,7 @@ do
 		then
 	        echo "Removing temporary datasets.xml file: $tmp_datasets_xml_file" >&2;
 		    rm $tmp_datasets_xml_file;
-		    return 1;
+		    exit 1;
 		fi
     fi
 done
@@ -140,7 +146,7 @@ fi
 if [ "$?" -ne 0 ]
 then
     rm $tmp_datasets_xml_file;
-    return 1;
+    exit 1;
 fi
 
 # Move the temporary file to the datasets.xml file
