@@ -1,0 +1,279 @@
+<dataset active="true" datasetID="flort_m_glider_instrument_telemetered_e74f_1e74_e844" type="EDDTableFromNcCFFiles">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/var/local/erddap/erddap-storage/bin/erddap-async/frontend/templating/datasets/flort_m_glider_instrument-telemetered/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <preExtractRegex />
+    <postExtractRegex />
+    <extractRegex />
+    <columnNameForExtract />
+    <sortFilesBySourceNames />
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    
+    <addAttributes>
+        <att name="keywords">3-wavelength, assets, backscatter, based, cdom, ce05moas, ce05moas-gl311-02-flortm000-telemetered-flort, chemistry, chla, chlorophyll, chlorophyll-a, coastal, coefficient, color, colored, concentration, ctdgv_m_glider_instrument-sci_water_pracsal, ctdgv_m_glider_instrument-sci_water_pressure_dbar, ctdgv_m_glider_instrument-sci_water_temp, ctdgv_m_glider_instrument_sci_water_pracsal, ctdgv_m_glider_instrument_sci_water_pressure_dbar, ctdgv_m_glider_instrument_sci_water_temp, cycle, cyclec, data, density, deployment, derived, dissolved, driver, driver_timestamp, elapsed, endurance, engine, flag, flort, flort_m_bback_total, flort_m_scat_seawater, flortm000, fluorometer, gl311, glider, global, gps, identifier, ingestion, ingestion_timestamp, initiative, instrument, internal, internal_timestamp, latitude, longitude, m_present_secs_into_mission, m_present_time, mass, mass_concentration_of_chlorophyll_a_in_sea_water, matter, measured, mission, mobile, obs, observations, observatories, ocean, ocean color, oceans,
+Oceans &gt; Ocean Chemistry &gt; Chlorophyll,
+Oceans &gt; Ocean Pressure &gt; Water Pressure,
+Oceans &gt; Ocean Temperature &gt; Water Temperature,
+Oceans &gt; Salinity/Density &gt; Salinity,
+optical, optical properties, organic, port, port_timestamp, positioning, practical, preferred, preferred_timestamp, pressure, produced, properties, provenance, pure, quality, quality_flag, salinity, scattering, sci_flbbcd_bb_units, sci_flbbcd_cdom_units, sci_flbbcd_chlor_units, sci_m_present_secs_into_mission, sci_m_present_time, science, sea, sea_water_practical_salinity, sea_water_pressure, sea_water_temperature, seawater, start, stream, system, telemetered, temperature, time, times, timestamp, total, trajectory, version, volume, water, wavelength</att>
+        <att name="summary">Coastal Endurance Mobile Assets Coastal Glider 311 3-Wavelength Fluorometer data (flort_m_glider_instrument) - Deployment 0002 (telemetered). http://oceanobservatories.org. Ocean Observatories Initiative data from a local source. A Fluorometer is a device used to measure patterns of fluorescence.  The 3-Wavelength Fluorometer specifically examines chlorophyll-a fluorescence, optical backscatter (red wavelengths), and colored dissolved organic matter (CDOM).</att>
+        <att name="title">Coastal Endurance Mobile Assets Coastal Glider 311 3-Wavelength Fluorometer data (flort_m_glider_instrument), Deployment 0002 (telemetered)</att>
+    <att name="uuid">null</att><att name="feature_Type">null</att><att name="nodc_template_version">null</att></addAttributes>
+    <dataVariable>
+        <sourceName>trajectory</sourceName>
+        <destinationName>trajectory</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>quality_flag</sourceName>
+        <destinationName>quality_flag</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>flort_m_scat_seawater</sourceName>
+        <destinationName>flort_m_scat_seawater</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">6.500000000000001E-4</att>
+            <att name="colorBarMinimum" type="double">5.0E-4</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>deployment</sourceName>
+        <destinationName>deployment</destinationName>
+        <dataType>int</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">2.1</att>
+            <att name="colorBarMinimum" type="double">1.9000000000000001</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>driver_timestamp</sourceName>
+        <destinationName>driver_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.4698900785E9</att>
+            <att name="colorBarMinimum" type="double">1.469890076E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>id</sourceName>
+        <destinationName>id</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_flbbcd_cdom_units</sourceName>
+        <destinationName>sci_flbbcd_cdom_units</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">2.5</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>provenance</sourceName>
+        <destinationName>provenance</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ctdgv_m_glider_instrument_sci_water_pressure_dbar</sourceName>
+        <destinationName>ctdgv_m_glider_instrument_sci_water_pressure_dbar</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>internal_timestamp</sourceName>
+        <destinationName>internal_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>flort_m_bback_total</sourceName>
+        <destinationName>flort_m_bback_total</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">0.003</att>
+            <att name="colorBarMinimum" type="double">-0.001</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>m_present_secs_into_mission</sourceName>
+        <destinationName>m_present_secs_into_mission</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">683000.0</att>
+            <att name="colorBarMinimum" type="double">678000.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>m_present_time</sourceName>
+        <destinationName>m_present_time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_flbbcd_chlor_units</sourceName>
+        <destinationName>sci_flbbcd_chlor_units</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ingestion_timestamp</sourceName>
+        <destinationName>ingestion_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.4698900785E9</att>
+            <att name="colorBarMinimum" type="double">1.469890076E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>port_timestamp</sourceName>
+        <destinationName>port_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">-2.1E9</att>
+            <att name="colorBarMinimum" type="double">-2.3E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_flbbcd_bb_units</sourceName>
+        <destinationName>sci_flbbcd_bb_units</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">5.0E-4</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ctdgv_m_glider_instrument_sci_water_pracsal</sourceName>
+        <destinationName>ctdgv_m_glider_instrument_sci_water_pracsal</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_m_present_time</sourceName>
+        <destinationName>sci_m_present_time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ctdgv_m_glider_instrument_sci_water_temp</sourceName>
+        <destinationName>ctdgv_m_glider_instrument_sci_water_temp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>preferred_timestamp</sourceName>
+        <destinationName>preferred_timestamp</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_m_present_secs_into_mission</sourceName>
+        <destinationName>sci_m_present_secs_into_mission</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">683000.0</att>
+            <att name="colorBarMinimum" type="double">678000.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+
+

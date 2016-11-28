@@ -1,0 +1,225 @@
+<dataset active="true" datasetID="parad_m_glider_instrument_telemetered_394f_e63c_f3d8" type="EDDTableFromNcCFFiles">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/var/local/erddap/erddap-storage/bin/erddap-async/frontend/templating/datasets/parad_m_glider_instrument-telemetered/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <preExtractRegex />
+    <postExtractRegex />
+    <extractRegex />
+    <columnNameForExtract />
+    <sortFilesBySourceNames />
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    
+    <addAttributes>
+        <att name="keywords">active, aphotic, assets, available, based, ce05moas, ce05moas-gl311-01-paradm000-telemetered-parad, coastal, ctdgv_m_glider_instrument-sci_water_pressure_dbar, ctdgv_m_glider_instrument_sci_water_pressure_dbar, cycle, cyclec, data, deployment, derived, downwelling, downwelling_photosynthetic_photon_flux_in_sea_water, driver, driver_timestamp, elapsed, endurance, engine, flag, flux, gl311, glider, global, gps, heat, heat flux, identifier, ingestion, ingestion_timestamp, initiative, instrument, internal, internal_timestamp, latitude, longitude, m_present_secs_into_mission, m_present_time, measured, mission, mobile, obs, observations, observatories, ocean, oceans,
+Oceans &gt; Ocean Optics &gt; Aphotic/Photic Zone,
+Oceans &gt; Ocean Optics &gt; Photosynthetically Active Radiation,
+Oceans &gt; Ocean Pressure &gt; Water Pressure,
+optics, par, parad, parad_m_par, paradm000, photic, photon, photosynthetic, photosynthetically, port, port_timestamp, positioning, preferred, preferred_timestamp, pressure, produced, provenance, quality, quality_flag, radiation, sci_bsipar_par, sci_m_present_secs_into_mission, sci_m_present_time, science, sea, sea_water_pressure, seawater, start, stream, system, telemetered, time, times, timestamp, trajectory, version, water, zone</att>
+        <att name="summary">Coastal Endurance Mobile Assets Coastal Glider 311 Photosynthetically Available Radiation data (parad_m_glider_instrument) - Deployment 0002 (telemetered). http://oceanobservatories.org. Ocean Observatories Initiative data from a local source. A Photosynthetically Available Radiation (PAR) sensor is used to measure the spectral range of light that is available in the water column for use by primary producers for photosynthesis (400-700 nanometers).</att>
+        <att name="title">Coastal Endurance Mobile Assets Coastal Glider 311 Photosynthetically Available Radiation data (parad_m_glider_instrument), Deployment 0002 (telemetered)</att>
+    <att name="uuid">null</att><att name="feature_Type">null</att><att name="nodc_template_version">null</att></addAttributes>
+    <dataVariable>
+        <sourceName>trajectory</sourceName>
+        <destinationName>trajectory</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>quality_flag</sourceName>
+        <destinationName>quality_flag</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_m_present_time</sourceName>
+        <destinationName>sci_m_present_time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>parad_m_par</sourceName>
+        <destinationName>parad_m_par</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>driver_timestamp</sourceName>
+        <destinationName>driver_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.469890078E9</att>
+            <att name="colorBarMinimum" type="double">1.469890076E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>id</sourceName>
+        <destinationName>id</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>provenance</sourceName>
+        <destinationName>provenance</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_bsipar_par</sourceName>
+        <destinationName>sci_bsipar_par</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ctdgv_m_glider_instrument_sci_water_pressure_dbar</sourceName>
+        <destinationName>ctdgv_m_glider_instrument_sci_water_pressure_dbar</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>internal_timestamp</sourceName>
+        <destinationName>internal_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>m_present_secs_into_mission</sourceName>
+        <destinationName>m_present_secs_into_mission</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">683000.0</att>
+            <att name="colorBarMinimum" type="double">678000.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>m_present_time</sourceName>
+        <destinationName>m_present_time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ingestion_timestamp</sourceName>
+        <destinationName>ingestion_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.469890078E9</att>
+            <att name="colorBarMinimum" type="double">1.469890076E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>port_timestamp</sourceName>
+        <destinationName>port_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">-2.1E9</att>
+            <att name="colorBarMinimum" type="double">-2.3E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>deployment</sourceName>
+        <destinationName>deployment</destinationName>
+        <dataType>int</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">2.1</att>
+            <att name="colorBarMinimum" type="double">1.9000000000000001</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>preferred_timestamp</sourceName>
+        <destinationName>preferred_timestamp</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_m_present_secs_into_mission</sourceName>
+        <destinationName>sci_m_present_secs_into_mission</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">683000.0</att>
+            <att name="colorBarMinimum" type="double">678000.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+
+

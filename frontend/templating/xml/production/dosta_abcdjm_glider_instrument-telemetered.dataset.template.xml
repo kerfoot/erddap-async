@@ -1,0 +1,266 @@
+<dataset active="true" datasetID="dosta_abcdjm_glider_instrument_telemetered_b6fb_a0ed_509b" type="EDDTableFromNcCFFiles">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/var/local/erddap/erddap-storage/bin/erddap-async/frontend/templating/datasets/dosta_abcdjm_glider_instrument-telemetered/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <preExtractRegex />
+    <postExtractRegex />
+    <extractRegex />
+    <columnNameForExtract />
+    <sortFilesBySourceNames />
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    
+    <addAttributes>
+        <att name="keywords">abcdjm, assets, based, ce05moas, ce05moas-gl311-04-dostam000-telemetered-dosta, chemistry, coastal, concentration, ctdgv_m_glider_instrument-sci_water_pracsal, ctdgv_m_glider_instrument-sci_water_pressure, ctdgv_m_glider_instrument-sci_water_pressure_dbar, ctdgv_m_glider_instrument-sci_water_temp, ctdgv_m_glider_instrument_sci_water_pracsal, ctdgv_m_glider_instrument_sci_water_pressure, ctdgv_m_glider_instrument_sci_water_pressure_dbar, ctdgv_m_glider_instrument_sci_water_temp, cycle, cyclec, data, density, deployment, derived, dissolved, dissolved o2, dosta, dostam000, driver, driver_timestamp, elapsed, endurance, engine, flag, fraction, gl311, glider, global, gps, identifier, ingestion, ingestion_timestamp, initiative, instrument, internal, internal_timestamp, latitude, longitude, m_present_secs_into_mission, m_present_time, mass, measured, mission, mobile, mole, mole_concentration_of_dissolved_molecular_oxygen_in_sea_water, molecular, moles, moles_of_oxygen_per_unit_mass_in_sea_water, O2, obs, observations, observatories, ocean, oceans,
+Oceans &gt; Ocean Chemistry &gt; Oxygen,
+Oceans &gt; Ocean Pressure &gt; Water Pressure,
+Oceans &gt; Ocean Temperature &gt; Water Temperature,
+Oceans &gt; Salinity/Density &gt; Salinity,
+oxygen, per, port, port_timestamp, positioning, practical, preferred, preferred_timestamp, pressure, produced, provenance, quality, quality_flag, salinity, saturation, sci_abs_oxygen, sci_m_present_secs_into_mission, sci_m_present_time, sci_oxy4_oxygen, sci_oxy4_saturation, science, sea, sea_water_practical_salinity, sea_water_pressure, sea_water_temperature, seawater, start, stream, system, telemetered, temperature, time, times, timestamp, trajectory, unit, version, volume, volume_fraction_of_oxygen_in_sea_water, water</att>
+        <att name="summary">Coastal Endurance Mobile Assets Coastal Glider 311 Dissolved Oxygen data (dosta_abcdjm_glider_instrument) - Deployment 0002 (telemetered). http://oceanobservatories.org. Ocean Observatories Initiative data from a local source. A Dissolved Oxygen sensor measures the concentration of microscopic bubbles of gaseous oxygen that are mixed in seawater (i.e. dissolved oxygen concentration).  The Dissolved Oxygen Stable Response sensor measures dissolved oxygen concentrations on mobile assets, deep profilers, and moorings.</att>
+        <att name="title">Coastal Endurance Mobile Assets Coastal Glider 311 Dissolved Oxygen data (dosta_abcdjm_glider_instrument), Deployment 0002 (telemetered)</att>
+    <att name="uuid">null</att><att name="feature_Type">null</att><att name="nodc_template_version">null</att></addAttributes>
+    <dataVariable>
+        <sourceName>trajectory</sourceName>
+        <destinationName>trajectory</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>quality_flag</sourceName>
+        <destinationName>quality_flag</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>deployment</sourceName>
+        <destinationName>deployment</destinationName>
+        <dataType>int</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">2.1</att>
+            <att name="colorBarMinimum" type="double">1.9000000000000001</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_oxy4_oxygen</sourceName>
+        <destinationName>sci_oxy4_oxygen</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_abs_oxygen</sourceName>
+        <destinationName>sci_abs_oxygen</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">250.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>id</sourceName>
+        <destinationName>id</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>driver_timestamp</sourceName>
+        <destinationName>driver_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.4698900785E9</att>
+            <att name="colorBarMinimum" type="double">1.4698900765E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>provenance</sourceName>
+        <destinationName>provenance</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ctdgv_m_glider_instrument_sci_water_pressure_dbar</sourceName>
+        <destinationName>ctdgv_m_glider_instrument_sci_water_pressure_dbar</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>internal_timestamp</sourceName>
+        <destinationName>internal_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>m_present_secs_into_mission</sourceName>
+        <destinationName>m_present_secs_into_mission</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">683000.0</att>
+            <att name="colorBarMinimum" type="double">678000.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>m_present_time</sourceName>
+        <destinationName>m_present_time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ctdgv_m_glider_instrument_sci_water_pressure</sourceName>
+        <destinationName>ctdgv_m_glider_instrument_sci_water_pressure</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">20.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ingestion_timestamp</sourceName>
+        <destinationName>ingestion_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.4698900785E9</att>
+            <att name="colorBarMinimum" type="double">1.4698900765E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>port_timestamp</sourceName>
+        <destinationName>port_timestamp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">-2.1E9</att>
+            <att name="colorBarMinimum" type="double">-2.3E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ctdgv_m_glider_instrument_sci_water_pracsal</sourceName>
+        <destinationName>ctdgv_m_glider_instrument_sci_water_pracsal</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_m_present_time</sourceName>
+        <destinationName>sci_m_present_time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ctdgv_m_glider_instrument_sci_water_temp</sourceName>
+        <destinationName>ctdgv_m_glider_instrument_sci_water_temp</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>preferred_timestamp</sourceName>
+        <destinationName>preferred_timestamp</destinationName>
+        <dataType>String</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_m_present_secs_into_mission</sourceName>
+        <destinationName>sci_m_present_secs_into_mission</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">683000.0</att>
+            <att name="colorBarMinimum" type="double">678000.0</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.457896E9</att>
+            <att name="colorBarMinimum" type="double">1.457892E9</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sci_oxy4_saturation</sourceName>
+        <destinationName>sci_oxy4_saturation</destinationName>
+        <dataType>float</dataType>
+        
+        <addAttributes>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+
+
