@@ -11,11 +11,13 @@ from datetime import timedelta
 from asynclib.erddap import fetch_erddap_datasets, download_erddap_nc
 
 def main(args):
-    '''For each uframe response json file specified, the request status is checked and,
-    if complete, the ERDDAP .args and erddapDatasets.xml files are created in the
-    default templating destination location.  These files are used to create an XML
-    template used to serve the dataset via ERDDAP'''
-    
+    '''Download a small NetCDF file, create the .args and .xml files necessary
+    for creating an ERDDAP XML template to be used for serving frontent stream
+    datasets.  Files are created for each dataset found on the ERDDAP server
+    located at the URL specified in erddap_url, which must end in either
+    tabledap or griddap.
+    '''
+
     # Fetch the erddap datasets listing
     erddap_datasets = fetch_erddap_datasets(args.erddap_url)
     if not erddap_datasets:
@@ -95,100 +97,26 @@ def main(args):
             else:
                 sys.stdout.write('Re-downloading stream NetCDF file: {:s}\n'.format(nc_file))
                 
-        # Download a very small file to use as the template NetCDF file.  
-        dt1 = parser.parse(dataset['maxTime'])
-        # Subtract 5 minutes from dt1 to get the starting timestamp of the dataset we 
-        # want to download
-        dt0 = dt1 - timedelta(0, 3600)
+#        # Download a very small file to use as the template NetCDF file.  
+#        dt1 = parser.parse(dataset['maxTime'])
+#        # Subtract 5 minutes from dt1 to get the starting timestamp of the dataset we 
+#        # want to download
+#        dt0 = dt1 - timedelta(0, 3600)
 
         # Try to download the file
         sys.stdout.write('Downloading: {:s}\n'.format(nc_file))
         nc_file = download_erddap_nc(args.erddap_url,
             dataset['datasetID'],
             output_filename=nc_file,
+            time_delta_type='hours',
+            time_delta_value=1,
             clobber=True,
             nc_type='CF',
-            start_time=dt0.strftime('%Y-%m-%dT%H:%M:%S.%sZ'),
-            end_time=dt1.strftime('%Y-%m-%dT%H:%M:%S.%sZ'))
+            print_url=args.url_only);
+
         if not nc_file:
             continue
-            
-        #try:
-        #    with open(response_json_file, 'r') as fid:
-        #        response = json.load(fid)
-        #except IOError as e:
-        #    sys.stderr.write('{:s}\n'.format(e))
-        #    continue
-        #    
-        ## Make sure the response dict exists
-        #if 'response' not in response.keys():
-        #    sys.stderr.write('Invalid UFrame response object: {:s}\n'.format(response_json_file))
-        #    continue
-        ## response code must == 200 to be ok    
-        #if response['status_code'] != 200:
-        #    sys.stderr.write('Invalid UFrame request (Reason: {:s}\n'.format(response['reason']))
-        #    continue
-        
-        ## See if a template exists for this request
-        #dataset_template = get_valid_dataset_template(response['stream']['stream'],
-        #    response['stream']['method'],
-        #    template_dir=template_dir)
-        #if not dataset_template:
-        #    continue
-            
-        # Make sure the response has the proper number of allURLs items
-        #if len(response['response']['allURLs']) != 2:
-        #    sys.stderr.write('allURLs does not contain 2 urls\n'.format(response_json_file))
-        #    continue
-        #    
-        ## Get the user product directory from response['response']['response']['allURLs'][1]
-        #d_tokens = response['response']['allURLs'][1].split('/')
-        #if len(d_tokens) != 6:
-        #    sys.stderr.write('Badly formatted UFrame async destination url: {:s}\n'.format(response['response']['response']['allURLs'][1]))
-        #    continue
-        #async_nc_dir = os.path.join(async_root, d_tokens[4], d_tokens[5])
-        #if not os.path.isdir(async_nc_dir):
-        #    sys.stdout.write('UFrame async destination does not exist: {:s}\n'.format(async_nc_dir))
-        #    continue
-        #    
-        ## Check for the existence and contents of the status.txt file in async_nc_dir
-        ## If it's there and it contains the work 'complete', the request is ready for processing
-        #status_file = os.path.join(async_nc_dir, 'status.txt')
-        #if not os.path.isfile(status_file):
-        #    sys.stdout.write('Production creation incomplete: {:s}\n'.format(async_nc_dir))
-        #    continue
-        #try:
-        #    with open(status_file, 'r') as fid:
-        #        status = fid.readline()
-        #except IOError as e:
-        #    sys.stderr.write('{:s}\n'.format(e))
-        #    continue
-        #if status != 'complete':
-        #    sys.stdout.write('Production creation incomplete: {:s}\n'.format(status_file))
-        #    continue
-        #    
-        ## Create the NetCDF filename glob string to search for created files
-        #nc_filename_template = 'deployment*{:s}-{:s}-{:s}*.nc'.format(
-        #    response['reference_designator'],
-        #    response['instrument']['telemetry'],
-        #    response['instrument']['stream'])
-        #source_nc_files = glob.glob(os.path.join(async_nc_dir, nc_filename_template))
-        ## Skip the rest if no NetCDF files were found in the UFrame product directory
-        #if not source_nc_files:
-        #    sys.stderr.write('No source NetCDF files found: {:s}\n'.format(async_nc_dir))
-        #    continue
-        #    
-        ## Create the args and xml templates if we have at least one file to use
-        #tmpl_dir = '{:s}-{:s}'.format(response['instrument']['stream'],
-        #    response['instrument']['telemetry'])
-        #tmpl_dest_dir = os.path.join(tmpl_file_destination, tmpl_dir)
-        #if not os.path.isdir(tmpl_dest_dir):
-        #    try:
-        #        os.mkdir(tmpl_dest_dir)
-        #    except OSError as e:
-        #        sys.stderr.write('{:s}\n'.format(e))
-        #        continue
-        
+
         # Create the args filename
         args_fname = '{:s}.erddapDatasets.args'.format(stream)
         args_file = os.path.join(tmpl_dest_dir, args_fname)
@@ -258,6 +186,9 @@ if __name__ == '__main__':
     arg_parser.add_argument('-c', '--clobber',
         action='store_true',
         help='Overwrite any existing args and xml files present in the dataset directory')
+    arg_parser.add_argument('-u', '--url_only',
+        action='store_true',
+        help='Print the request URL, but do not send the request.')
         
     parsed_args = arg_parser.parse_args()
     
