@@ -4,9 +4,9 @@
 # Source .bashrc for virtualenv stuff
 . ~/.bashrc;
 PATH=${OOI_ERDDAP_ASYNC_HOME}/backend/bin:${PATH};
-# Set the OOI_ERDDAP_USER to the name we want to use for UFrame requests.  We
-# must export it since a new shell is spawned to run the python stuff
-export OOI_ERDDAP_USER=erddap_user;
+## Set the OOI_ERDDAP_USER to the name we want to use for UFrame requests.  We
+## must export it since a new shell is spawned to run the python stuff
+#export OOI_ERDDAP_USER=erddap_user;
 
 app=$(basename $0);
 
