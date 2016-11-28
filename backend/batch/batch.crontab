@@ -3,6 +3,6 @@
 # Write all newly available data stream catalogs, grouped by subsite, once per day
 30 0 * * * /var/local/erddap/erddap-storage/bin/erddap-async/backend/batch/create_new_deployment_catalogs.sh;
 # Send requests for all newly deployed instruments.  This is done only once/day
-10 17 * * * /var/local/erddap/erddap-storage/bin/erddap-async/backend/batch/send_new_deployment_async_requests.sh;
+0 1 * * * /var/local/erddap/erddap-storage/bin/erddap-async/backend/batch/send_new_deployment_async_requests.sh;
 # Process UFrame request files and create/update backend ERDDAP datasets
-30 17 * * * /var/local/erddap/erddap-storage/bin/erddap-async/backend/batch/requests_to_erddap.sh;
+#30 17 * * * /var/local/erddap/erddap-storage/bin/erddap-async/backend/batch/requests_to_erddap.sh;
